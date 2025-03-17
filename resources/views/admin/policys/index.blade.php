@@ -49,13 +49,13 @@
                                             <td>{{ $itemPolicy->alias }}</td>
                                             <td>{{ $itemPolicy->created_at->diffForHumans() }}</td>
 
-                                            <td class="d-flex">
+                                            <td class="d-flex gap-2">
                                                 <a href="{{ route('policys.edit', $itemPolicy->alias) }}"
-                                                    class="btn text-center">
-                                                    <i class="bi bi-pencil-square me-3"></i>
+                                                    class="btn text-center btn-outline-warning">
+                                                    <i class="bi bi-pencil-square "></i>
 
                                                 </a>
-                                                <button class="btn me-2 view-detail" 
+                                                <button class="btn me-2 view-detail btn-outline-info" 
                                                         data-name="{{ $itemPolicy->name }}" 
                                                         data-alias="{{ $itemPolicy->alias }}" 
                                                         data-created="{{ $itemPolicy->created_at }}"

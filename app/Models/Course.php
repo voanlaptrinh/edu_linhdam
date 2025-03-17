@@ -18,8 +18,4 @@ class Course extends Model
         'metatitle',
         'metadescription'
     ];
-
-    protected $casts = [
-        'tag' => 'array', // Cast tag to an array
-    ];
 }

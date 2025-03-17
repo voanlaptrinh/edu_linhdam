@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('content')->nullable();
             $table->string('alias')->nullable();
-            $table->json('tag')->nullable(); // JSON column for tags
             $table->string('image')->nullable();
             $table->string('metatitle')->nullable();
             $table->text('metadescription')->nullable();

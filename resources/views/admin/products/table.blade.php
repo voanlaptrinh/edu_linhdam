@@ -5,15 +5,23 @@
             <tr>
               
                 <td>{{ $product->title }}</td>
-                <td>{{ $product->category->name ?? 'Không có danh mục' }}</td>
+           
                 <td>
                     <span class="badge {{ $product->status == 1 ? 'bg-success' : 'bg-danger' }}">
                         {{ $product->status == 1 ? 'Hoạt động' : 'Tạm dừng' }}
                     </span>
                 </td>
-               
+                <td>
+                    @if (!empty($product->tags))
+                    @foreach ($product->tags as $item)
+                        <span class="badge bg-light-success text-dark-success">{{ $item['value'] }}</span>
+                    @endforeach
+                @else
+                    <span class="text-muted">Không có tag</span>
+                @endif
+                 </td>
                 <td>{{ $product->updated_at->diffForHumans() }}</td>
-                <td class="d-flex g-2">
+                <td class="d-flex gap-2">
                     <a href="{{ route('products.edit', $product->alias) }}" class="btn text-center btn-outline-warning">
                         <i class="bi bi-pencil-square"></i>
                     </a>

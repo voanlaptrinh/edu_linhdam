@@ -198,7 +198,7 @@
                         <div class="mb-3">
                             <label class="form-label">Giá</label>
                             <input type="number" min="0" name="price" class="form-control"
-                                placeholder="$0.00" value="{{ old('price') }}">
+                                placeholder="$0.00" value="{{ old('price', 0) }}">
                             @error('price')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror
@@ -206,7 +206,7 @@
                         <div class="mb-3">
                             <label class="form-label">Giá khuyến mãi</label>
                             <input type="number" min="0" name="sale_price" class="form-control"
-                                placeholder="$0.00" value="{{ old('sale_price') }}">
+                                placeholder="$0.00" value="{{ old('sale_price', 0) }}">
                             @error('sale_price')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror

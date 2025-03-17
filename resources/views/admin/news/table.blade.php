@@ -1,6 +1,6 @@
 @if ($news->isEmpty())
     <tr>
-        <td colspan="7" class="text-center">Không tìm thấy danh mục nào</td>
+        <td colspan="7" class="text-center">Tin tức trống</td>
     </tr>
 @else
     @foreach ($news as $itemNews)
@@ -12,7 +12,7 @@
                 </div>
             </td>
             <td>{{ $itemNews->name }}</td>
-
+       
             <td>
                 @if (!empty($itemNews->tag))
                     @foreach ($itemNews->tag as $item)
@@ -22,25 +22,25 @@
                     <span class="text-muted">Không có tag</span>
                 @endif
             </td>
-
             <td>{{ $itemNews->created_at->diffForHumans() }}</td>
+         
 
-            <td class="d-flex">
-                <a href="{{ route('news.edit', $itemNews->alias) }}" class="btn text-center">
-                    <i class="bi bi-pencil-square"></i>
+            <td class="d-flex gap-2">
+                <a href="{{ route('news.edit', $itemNews->alias) }}" class="btn text-center btn-outline-warning">
+                    <i class="bi bi-pencil-square "></i>
 
                 </a>
                 <form action="{{ route('news.destroy', $itemNews->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn"
+                    <button type="submit" class="btn btn-outline-danger"
                         onclick="return confirm('Bạn có chắc chắn muốn xóa tin tức này?')"><i
                             class="bi bi-trash"></i></button>
                 </form>
 
-                <a href="{{ route('news.admin.detail', $itemNews->alias) }}" class="btn text-center">
-                    <i class="bi bi-eye me-3"></i>
+                <a href="{{ route('news.admin.detail', $itemNews->alias) }}" class="btn text-center btn-outline-info">
+                    <i class="bi bi-eye "></i>
                 </a>
             </td>
         </tr>
