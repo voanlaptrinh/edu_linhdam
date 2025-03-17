@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\DashboashController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PolicyController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\WebConfigController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,14 +35,7 @@ Route::prefix('/admin')->group(function () {
         Route::put('/{id}', [NewsController::class, 'update'])->name('news.update');
         Route::delete('delete/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
     });
-    // Route::prefix('/categorys')->group(function () {
-    //     Route::get('/', [CategoryController::class, 'index'])->name('categorys.admin');
-    //     Route::get('/create', [CategoryController::class, 'create'])->name('categorys.create');
-    //     Route::post('/store', [CategoryController::class, 'store'])->name('categorys.store');
-    //     Route::get('/{alias}/edit', [CategoryController::class, 'edit'])->name('categorys.edit');
-    //     Route::put('/{id}', [CategoryController::class, 'update'])->name('categorys.update');
-    //     Route::delete('delete/{id}', [CategoryController::class, 'destroy'])->name('categorys.destroy');
-    // });
+    
     Route::prefix('/products')->group(function () {
         Route::get('/', [ProductsController::class, 'index'])->name('products.admin');
         Route::get('/create', [ProductsController::class, 'create'])->name('products.create');
@@ -61,6 +56,11 @@ Route::prefix('/admin')->group(function () {
     });
     Route::prefix('/banner')->group(function () {
         Route::get('/', [SliderController::class, 'index'])->name('banner.admin');
+        Route::get('/create', [SliderController::class, 'create'])->name('banner.create');
+        Route::post('/store', [SliderController::class, 'store'])->name('banner.store');
+        Route::get('/{id}/edit', [SliderController::class, 'edit'])->name('banner.edit');
+        Route::put('/{id}/update', [SliderController::class, 'update'])->name('banner.update');
+        Route::delete('/delete/{id}', [SliderController::class, 'destroy'])->name('banner.destroy');
     });
     Route::prefix('/teachers')->group(function () {
         Route::get('/', [TeacherController::class, 'index'])->name('teacher.admin');
@@ -71,10 +71,17 @@ Route::prefix('/admin')->group(function () {
         Route::put('/teachers/{id}', [TeacherController::class, 'update'])->name('teacher.update');
         Route::delete('/delete/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
     });
-    // Route::prefix('/orders')->group(function () {
-    //     Route::get('/', [OrderController::class, 'index'])->name('orders.admin');
-    //     Route::get('/detail/{orderNumber}', [OrderController::class, 'orderdetail'])->name('orders.admin.detail');
-    //     Route::put('/update-status/{orderNumber}', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
 
-    // });
+    Route::prefix('/courses')->group(function () {
+        Route::get('/', [CoursesController::class, 'index'])->name('courses.admin');
+        Route::get('/create', [CoursesController::class, 'create'])->name('courses.create');
+        Route::post('/store', [CoursesController::class, 'store'])->name('courses.store');
+        Route::get('/{alias}/edit', [CoursesController::class, 'edit'])->name('courses.edit');
+        Route::get('/{alias}/detail', [CoursesController::class, 'detail'])->name('courses.admin.detail');
+        Route::put('/{id}', [CoursesController::class, 'update'])->name('courses.update');
+        Route::delete('delete/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+    });
+    
+    Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
+    Route::post('/delete-image', [UploadController::class, 'deleteImage'])->name('delete-image');
 });

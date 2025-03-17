@@ -11,12 +11,25 @@
                 {{ $banner->description }}
             </td>
             <td>{{ $banner->created_at->diffForHumans() }}</td>
-            <td class="d-flex">
-                <button class="btn me-2 view-detail" data-name="{{ $banner->name }}"
+            <td class="d-flex gap-2">
+                <button class="btn view-detail btn-outline-info" data-name="{{ $banner->name }}"
                     data-created="{{ $banner->created_at }}" data-content="{{ $banner->description }}"
                     data-image="{{ $banner->image }}">
                     <i class="bi bi-eye"></i>
                 </button>
+                <a href="{{ route('banner.edit', $banner->id) }}" class="btn text-center btn-outline-warning">
+                    <i class="bi bi-pencil-square "></i>
+
+                </a>
+                <form action="{{ route('banner.destroy', $banner->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-outline-danger"
+                        onclick="return confirm('Bạn có chắc chắn muốn xóa tin tức này?')"><i
+                            class="bi bi-trash"></i></button>
+                </form>
+                
             </td>
         </tr>
     @endforeach

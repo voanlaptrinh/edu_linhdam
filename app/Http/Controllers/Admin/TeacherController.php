@@ -98,8 +98,8 @@ class TeacherController extends Controller
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalExtension(); // Lấy phần mở rộng của file (png, jpg, jpeg, ...)
             $fileName = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $extension;
-            $file->move(public_path('avatars'), $fileName);
-            $data['avatar'] = 'avatars/' . $fileName;
+            $file->move(public_path('source/avatars'), $fileName);
+            $data['avatar'] = 'source/avatars/' . $fileName;
         }
         
         $data['alias'] = Str::slug($request->name) . '-' . time();
@@ -179,9 +179,9 @@ class TeacherController extends Controller
     
             $avatar = $request->file('avatar');
             $avatarName = time() . '_' . $avatar->getClientOriginalName();
-            $avatar->move(public_path('avatars'), $avatarName);
+            $avatar->move(public_path('source/avatars'), $avatarName);
     
-            $data['avatar'] = 'avatars/' . $avatarName;
+            $data['avatar'] = 'source/avatars/' . $avatarName;
         }
 
         $data['skills'] = json_encode($request->skills);

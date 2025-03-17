@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\News;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-class NewsController extends Controller
+
+class CoursesController extends Controller
 {
     public function index(Request $request)
     {
         $search = $request->input('search');
 
         // Lọc danh mục theo từ khóa và trạng thái (nếu có)
-        $news = News::query()
+        $courses = Course::query()
             ->when($search, function ($query, $search) {
                 return $query->where('name', 'like', '%' . $search . '%');
             })
@@ -21,16 +22,16 @@ class NewsController extends Controller
             ->paginate(10);
         if ($request->ajax()) {
             return response()->json([
-                'table' => view('admin.news.table', compact('news'))->render(),
-                'pagination' => $news->links('pagination::bootstrap-4')->toHtml()
+                'table' => view('admin.courses.table', compact('courses'))->render(),
+                'pagination' => $courses->links('pagination::bootstrap-4')->toHtml()
             ]);
         }
 
-        return view('admin.news.index', compact('news'));
+        return view('admin.courses.index', compact('courses'));
     }
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.courses.create');
     }
     public function store(Request $request)
     {
@@ -41,7 +42,7 @@ class NewsController extends Controller
             'metadescription' => 'required|string|max:255',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string',
-            'tags' => 'nullable|json', // JSON validation for tags
+          
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg', // Max 1MB
         ], [
             'name.required' => 'Tiêu đề là bắt buộc',
@@ -67,31 +68,30 @@ class NewsController extends Controller
 
 
         // Tạo bản ghi mới
-        $news = News::create([
+        $news = Course::create([
             'name' => $request->name,
             'parent_id' => $request->parent_id,
             'description' => $request->description,
             'metatitle' => $request->description,
             'metadescription' => $request->description,
             'content' => $request->content,
-            'tag' => $request->tags ? json_decode($request->tags, true) : null,
             'image' => $imagePath,
         ]);
-        $news->alias = Str::slug($request->name) . '-' . $news->id;
+        $news->alias = Str::slug($request->name) . '-' . time();
         $news->save();
-        return redirect()->route('news.admin')->with('success', 'Tin tức đã được thêm thành công!');
+        return redirect()->route('courses.admin')->with('success', 'Bản tin khóa học đã được thêm thành công!');
     }
     public function edit($alias)
     {
-        $news = News::where('alias', $alias)->firstOrFail();
-        $tags = $news->tag;
-        return view('admin.news.edit', compact('news', 'tags'));
+        $courses = Course::where('alias', $alias)->firstOrFail();
+        $tags = $courses->tag;
+        return view('admin.courses.edit', compact('courses', 'tags'));
     }
     public function detail($alias)
     {
-        $news = News::where('alias', $alias)->firstOrFail();
-        $tags = $news->tag;
-        return view('admin.news.detail', compact('news', 'tags'));
+        $courses = Course::where('alias', $alias)->firstOrFail();
+        $tags = $courses->tag;
+        return view('admin.courses.detail', compact('courses', 'tags'));
     }
     public function update(Request $request, $id)
     {
@@ -101,7 +101,7 @@ class NewsController extends Controller
             'metadescription' => 'required|string|max:255',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string',
-            'tags' => 'nullable|json', // JSON validation for tags
+         
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg', // Max 1MB
         ], [
             'name.required' => 'Tiêu đề là bắt buộc',
@@ -117,8 +117,8 @@ class NewsController extends Controller
         ]);
 
 
-        $news = News::findOrFail($id);
-        $alias = Str::slug($request->input('name'), '-') . '-' . $id;
+        $news = Course::findOrFail($id);
+        $alias = Str::slug($request->input('name'), '-') . '-' . time();
 
         $imagePath = $news->image; // Lấy đường dẫn ảnh cũ
         if ($request->hasFile('image')) {
@@ -141,15 +141,14 @@ class NewsController extends Controller
             'metatitle' => $request->metatitle,
             'metadescription' => $request->metadescription,
             'content' => $request->content,
-            'tag' => $request->tags ? json_decode($request->tags, true) : null,
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('news.admin')->with('success', 'Tin tức đã được cập nhật thành công!');
+        return redirect()->route('courses.admin')->with('success', 'Bản tin khóa học đã được cập nhật thành công!');
     }
     public function destroy($id)
     {
-        $news = News::findOrFail($id);
+        $news = Course::findOrFail($id);
 
         if ($news->image) {
             $imagePath = 'source/dataimages/' . $news->image;
@@ -158,6 +157,7 @@ class NewsController extends Controller
             }
         }
         $news->delete();
-        return redirect()->route('news.admin')->with('success', 'Tin tức đã được xóa thành công!');
+        return redirect()->route('courses.admin')->with('success', 'Bản tin khóa học đã được xóa thành công!');
     }
+
 }

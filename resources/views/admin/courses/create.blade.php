@@ -4,12 +4,12 @@
         <div class="row mb-9">
             <div class="col-md-12">
                 <div>
-                    <h2>Thêm mới tin tức</h2>
+                    <h2>Thêm mới bản tin khóa học</h2>
                     <!-- breacrumb -->
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="#" class="text-inherit">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="text-inherit">Tin tức</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-inherit">Bản tin khóa học</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Thêm mới</li>
                         </ol>
                     </nav>
@@ -20,11 +20,7 @@
         <div class="row">
             <div class="col-12">
 
-
-
-
-
-                <form class="row g-6 needs-validation" action="{{ route('news.store') }}" method="POST"
+                <form class="row g-6 needs-validation" action="{{ route('courses.store') }}" method="POST"
                     enctype="multipart/form-data" novalidate>
                     @csrf
                     <div class="col-lg-8 col-12">
@@ -52,7 +48,7 @@
                                     <!-- input -->
                                     <label for="blognewTitle" class="form-label">Tiêu đề</label>
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Tiêu đề tin tức" value="{{old('name')}}"  />
+                                        placeholder="Tiêu đề tin tức" value="{{old('name')}}" />
                                     @error('name')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -63,7 +59,7 @@
                                     <label for="blogdescriptionTextarea" class="form-label"> Mô tả ngắn (Tối đa: 255 ký
                                         tự)</label>
                                     <textarea class="form-control" name="description" id="blogdescriptionTextarea" row="5"
-                                        placeholder="Mô tả ngắn" >{{old('description')}}</textarea>
+                                        placeholder="Write a short description" >{{old('description')}}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -82,20 +78,7 @@
                     <div class="col-lg-4 col-12">
                         <div class="card card-lg">
                             <div class="card-body p-6 d-flex flex-column gap-3">
-                                <div class="col-12">
-                                    <div class="d-flex flex-column gap-3">
-
-                                        <div>
-                                            <div>
-                                                <label class="form-label" for="tags">Tags</label>
-                                                <input name="tags" id="tags"
-                                                    value='[{"value":"grocery", "editable":false}, {"value":"shop"}]'
-                                                    class="w-100" placeholder="Tags" required />
-                                                <div class="invalid-feedback">Please enter tags</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                                 <div class="col-12">
                                     <div class="d-flex flex-column gap-2">
                                         <div>
@@ -112,7 +95,7 @@
                                             <label for="blogdeseoTextarea"
                                                 class="form-label visually-hidden">Content</label>
                                             <textarea class="form-control" id="blogdeseoTextarea" row="7" placeholder="Meta Descriptions"
-                                                name="metadescription" style="height: 76px;">{{old('metadescription')}}</textarea>
+                                                name="metadescription"  style="height: 76px;">{{old('metadescription')}}</textarea>
                                             @error('metadescription')
                                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                                             @enderror

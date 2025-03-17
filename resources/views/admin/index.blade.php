@@ -269,7 +269,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link {{ in_array(Request::route()->getName(), ['banner.admin']) ? 'active' : '' }} " href="{{route('banner.admin')}}">
+								<a class="nav-link {{ in_array(Request::route()->getName(), ['banner.admin','banner.create','banner.edit', 'banner.detail']) ? 'active' : '' }} " href="{{route('banner.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-images"></i></span>
 										<span class="nav-link-text">Banner</span>
@@ -284,35 +284,15 @@
 									</div>
 								</a>
 							</li>
-							{{-- <li class="nav-item">
-								<a class="nav-link {{ in_array(Request::route()->getName(), ['orders.admin']) ? 'active' : '' }} " href="{{route('orders.admin')}}">
-									<div class="d-flex align-items-center">
-										<span class="nav-link-icon"><i class="bi bi-bag"></i></span>
-										<span class="nav-link-text">Đơn hàng</span>
-									</div>
-								</a>
-							</li> --}}
 							<li class="nav-item">
-								<a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-									data-bs-target="#navCategoriesOrders" aria-expanded="false"
-									aria-controls="navCategoriesOrders">
+								<a class="nav-link {{ in_array(Request::route()->getName(), ['courses.admin','courses.create','courses.edit', 'courses.admin.detail']) ? 'active' : '' }} " href="{{route('courses.admin')}}">
 									<div class="d-flex align-items-center">
-										<span class="nav-link-icon"><i class="bi bi-bag"></i></span>
-										<span class="nav-link-text">Orders</span>
+										<span class="nav-link-icon"><i class="bi bi-file-font"></i></span>
+										<span class="nav-link-text">Bản tin khóa học</span>
 									</div>
 								</a>
-								<div id="navCategoriesOrders" class="collapse " data-bs-parent="#sideNavbar">
-									<ul class="nav flex-column">
-										<li class="nav-item">
-											<a class="nav-link " href="order-list.html">List</a>
-										</li>
-										<!-- Nav item -->
-										<li class="nav-item">
-											<a class="nav-link " href="order-single.html">Single</a>
-										</li>
-									</ul>
-								</div>
 							</li>
+							
 
 						
 						</ul>
@@ -325,8 +305,8 @@
 				<div class="navbar-vertical">
 					<div class="px-4 py-5 d-flex justify-content-between align-items-center">
 						<a href="" class="navbar-brand d-flex align-items-center justify-content-center">
-							{{-- <img src="{{asset(get_config()->logo)}}" alt="" />
-							<span class="fs-4 ps-1">{{get_config()->title}}</span> --}}
+							<img src="{{asset(get_config()->logo)}}" alt="" />
+							<span class="fs-4 ps-1">{{get_config()->title}}</span>
 						</a>
 						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 					</div>
@@ -339,35 +319,24 @@
 										<span>Dashboard</span>
 									</div>
 								</a>
-							</li>
-							<li class="nav-item mt-6 mb-3">
-								<span class="nav-label">Quản lý cửa hàng</span>
-							</li>
+							</li>--}}
 							<li class="nav-item">
-								<a class="nav-link {{ in_array(Request::route()->getName(), ['products.admin', 'products.create', 'products.edit']) ? 'active' : '' }}" href="{{route('products.admin')}}">
+								<a class="nav-link {{ in_array(Request::route()->getName(),  ['products.admin', 'products.create', 'products.edit', 'products.detailadmin']) ? 'active' : '' }}" href="{{route('products.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-cart"></i></span>
-										<span class="nav-link-text">Sản phẩms</span>
+										<span class="nav-link-text">Sản phẩm</span>
 									</div>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link  {{ in_array(Request::route()->getName(), ['categorys.admin', 'categorys.create', 'categorys.edit']) ? 'active' : '' }}" href="{{route('categorys.admin')}}">
-									<div class="d-flex align-items-center">
-										<span class="nav-link-icon"><i class="bi bi-list-task"></i></span>
-										<span class="nav-link-text">Danh mục</span>
-									</div>
-								</a>
-							</li> --}}
-							<li class="nav-item">
-								<a class="nav-link {{ in_array(Request::route()->getName(), ['news.admin', 'news.create', 'news.edit']) ? 'active' : '' }}" href="{{route('news.admin')}}">
+								<a class="nav-link {{ in_array(Request::route()->getName(), ['news.admin', 'news.create', 'news.edit', 'news.admin.detail']) ? 'active' : '' }}" href="{{route('news.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-newspaper"></i></span>
 										<span class="nav-link-text">Tin tức</span>
 									</div>
 								</a>
 							</li>
-							{{-- <li class="nav-item">
+							<li class="nav-item">
 								<a class="nav-link {{ in_array(Request::route()->getName(), ['policys.admin', 'policys.edit']) ? 'active' : '' }}" href="{{route('policys.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-journal-medical"></i></span>
@@ -384,25 +353,22 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-									data-bs-target="#navOrders" aria-expanded="false" aria-controls="navOrders">
+								<a class="nav-link {{ in_array(Request::route()->getName(), ['banner.admin','banner.create','banner.edit', 'banner.detail']) ? 'active' : '' }} " href="{{route('banner.admin')}}">
 									<div class="d-flex align-items-center">
-										<span class="nav-link-icon"><i class="bi bi-bag"></i></span>
-										<span class="nav-link-text">Orders</span>
+										<span class="nav-link-icon"><i class="bi bi-images"></i></span>
+										<span class="nav-link-text">Banner</span>
 									</div>
 								</a>
-								<div id="navOrders" class="collapse " data-bs-parent="#sideNavbar">
-									<ul class="nav flex-column">
-										<li class="nav-item">
-											<a class="nav-link " href="order-list.html">List</a>
-										</li>
-										<!-- Nav item -->
-										<li class="nav-item">
-											<a class="nav-link " href="order-single.html">Single</a>
-										</li>
-									</ul>
-								</div>
-							</li> --}}
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ in_array(Request::route()->getName(), ['teacher.admin','teacher.create','teacher.edit', 'teacher.detail']) ? 'active' : '' }} " href="{{route('teacher.admin')}}">
+									<div class="d-flex align-items-center">
+										<span class="nav-link-icon"><i class="bi bi-mortarboard"></i></span>
+										<span class="nav-link-text">Giáo viên</span>
+									</div>
+								</a>
+							</li>
+
 						
 						</ul>
 					</div>
@@ -434,7 +400,7 @@
                 'bold italic backcolor | alignleft aligncenter ' +
                 'alignright alignjustify | bullist numlist outdent indent | ' +
                 'removeformat | help | table | link image | blocks fontfamily fontsize',
-            images_upload_url: "/upload-image",
+            images_upload_url: "/admin/upload-image",
             relative_urls: false,
             document_base_url: "{{ url('/') }}",
             automatic_uploads: true,
@@ -449,7 +415,7 @@
                     editor.oldImages = currentImages;
 
                     removedImages.forEach(imageUrl => {
-                        fetch('/delete-image', {
+                        fetch('/admin/delete-image', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'

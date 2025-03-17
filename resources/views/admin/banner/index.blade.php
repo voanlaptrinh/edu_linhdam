@@ -17,7 +17,7 @@
                     </div>
                     <!-- button -->
                     <div>
-                        <a href="" class="btn btn-primary">Thêm Banner</a>
+                        <a href="{{route('banner.create')}}" class="btn btn-primary">Thêm Banner</a>
                     </div>
                 </div>
             </div>
