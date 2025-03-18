@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\DashboashController;
 use App\Http\Controllers\Admin\FeelingController;
+use App\Http\Controllers\Admin\InfomationController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PolicyController;
 use App\Http\Controllers\Admin\ProductsController;
@@ -85,9 +86,17 @@ Route::prefix('/admin')->group(function () {
     Route::prefix('/feelings')->group(function () {
         Route::get('/', [FeelingController::class, 'index'])->name('feelings.admin');
         Route::get('/create', [FeelingController::class, 'create'])->name('feelings.create');
+        Route::post('/store', [FeelingController::class, 'store'])->name('feelings.store');
+        Route::post('/toggle/{id}', [FeelingController::class, 'toggleApproval'])->name('feelings.toggle');
+        Route::get('/{id}/edit', [FeelingController::class, 'edit'])->name('feelings.edit');
+        Route::put('/{id}', [FeelingController::class, 'update'])->name('feelings.update');
+        Route::delete('delete/{id}', [FeelingController::class, 'destroy'])->name('feelings.destroy');
 
     });
-    
+    Route::prefix('/infomation')->group(function () {
+        Route::get('/', [InfomationController::class, 'index'])->name('infomation.admin');
+        Route::put('/update', [InfomationController::class, 'update'])->name('infomation.update');
+    });
     Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
     Route::post('/delete-image', [UploadController::class, 'deleteImage'])->name('delete-image');
 });

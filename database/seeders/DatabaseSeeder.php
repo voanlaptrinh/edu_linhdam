@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Infomations;
 use App\Models\Policy;
 use App\Models\Webconfigs;
 use Illuminate\Database\Seeder;
@@ -29,6 +30,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Infomations::create([
+            'name' => 'Giới Thiệu',
+            'description' => 'Shopp Book là cửa hàng sách trực tuyến hàng đầu tại Việt Nam.',
+            'content' => 'Shopp Book cung cấp hàng ngàn cuốn sách từ các thể loại khác nhau như tiểu thuyết, kinh tế, khoa học, văn học...',
+        ]);
         Webconfigs::create([
             'title' => 'Shopp book',
             'website' => 'shoppbook.com',

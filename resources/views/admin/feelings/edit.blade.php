@@ -20,9 +20,10 @@
         <div class="row">
             <div class="col-12">
 
-                <form class="row g-6 needs-validation" action="{{ route('feelings.store') }}" method="POST"
+                <form class="row g-6 needs-validation" action="{{ route('feelings.update', $feeling->id) }}" method="POST"
                     enctype="multipart/form-data" novalidate>
                     @csrf
+                    @method('PUT')
                     <div class="col-lg-12 col-12">
                         <div class="card card-lg">
                             <div class="card-body p-6 d-flex flex-column gap-3">
@@ -30,7 +31,7 @@
                                     class="d-flex flex-column flex-md-row align-items-center mb-4 file-input-wrapper gap-2">
                                     <div>
                                         <img class="image avatar avatar-lg rounded-3"
-                                            src="{{ asset('source/images/placeholder-img.jpg') }}" alt="Image">
+                                            src="{{ asset($feeling->image) }}" alt="Image">
                                     </div>
 
                                     <div class="file-upload btn btn-light ms-md-4">
@@ -49,7 +50,7 @@
                                     <!-- input -->
                                     <label for="blognewTitle" class="form-label">Tiêu đề</label>
                                     <input type="text" name="title" class="form-control" id="title"
-                                        placeholder="Tiêu đề" value="{{old('title')}}" />
+                                        placeholder="Tiêu đề" value="{{old('title', $feeling->title)}}" />
                                     @error('title')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -58,15 +59,14 @@
                                 <div class="col-6">
                                     <!-- input -->
                                     <label for="blognewTitle" class="form-label">Đánh giá</label>
-                                    {{-- <input type="text" name="rating" class="form-control" id="rating"
-                                        placeholder="Tiêu đề tin tức" value="{{old('rating')}}" /> --}}
-                                        <select name="rating" class="form-control" id="">
-                                            <option value="1">1 sao</option>
-                                            <option value="2">2 sao</option>
-                                            <option value="3">3 sao</option>
-                                            <option value="4">4 sao</option>
-                                            <option value="5">5 sao</option>
-                                        </select>
+                                    
+                                    <select name="rating" class="form-control">
+                                        <option value="1" {{ $feeling->rating == 1 ? 'selected' : '' }}>1 sao</option>
+                                        <option value="2" {{ $feeling->rating == 2 ? 'selected' : '' }}>2 sao</option>
+                                        <option value="3" {{ $feeling->rating == 3 ? 'selected' : '' }}>3 sao</option>
+                                        <option value="4" {{ $feeling->rating == 4 ? 'selected' : '' }}>4 sao</option>
+                                        <option value="5" {{ $feeling->rating == 5 ? 'selected' : '' }}>5 sao</option>
+                                    </select>
                                     @error('rating')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -76,7 +76,7 @@
 
                                 <div class="col-12">
                                     <label class="form-label">Nội dung</label>
-                                    <textarea id="content" class="form-control" name="content">{{old('content')}}</textarea>
+                                    <textarea id="content" class="form-control" name="content">{{old('content', $feeling->content)}}</textarea>
                                     @error('content')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-12">
                         <div class="d-flex flex-row gap-2">
-                            <button class="btn btn-primary w-100" type="submit">Thêm mới</button>
+                            <button class="btn btn-primary w-100" type="submit">Chỉnh sửa</button>
                             <a class="btn btn-light w-100" href="{{route('feelings.admin')}}">Quay lại</button>
                         </div>
                     </div>

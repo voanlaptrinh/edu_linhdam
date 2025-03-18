@@ -56,7 +56,7 @@
                                     <label class="form-label">Tên website</label>
                                     <input type="text" class="form-control" placeholder="Tên website" name="title"
                                         value="{{ old('title', $webConfig->title) }}">
-                                    @error('name')
+                                    @error('title')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
 
