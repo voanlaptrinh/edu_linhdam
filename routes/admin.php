@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\DashboashController;
+use App\Http\Controllers\Admin\FeelingController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PolicyController;
 use App\Http\Controllers\Admin\ProductsController;
@@ -80,6 +81,11 @@ Route::prefix('/admin')->group(function () {
         Route::get('/{alias}/detail', [CoursesController::class, 'detail'])->name('courses.admin.detail');
         Route::put('/{id}', [CoursesController::class, 'update'])->name('courses.update');
         Route::delete('delete/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+    });
+    Route::prefix('/feelings')->group(function () {
+        Route::get('/', [FeelingController::class, 'index'])->name('feelings.admin');
+        Route::get('/create', [FeelingController::class, 'create'])->name('feelings.create');
+
     });
     
     Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');

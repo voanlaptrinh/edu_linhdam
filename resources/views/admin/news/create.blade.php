@@ -1,4 +1,4 @@
-@extends('admin.index')
+feelings@extends('admin.index')
 @section('content')
     <div class="container">
         <div class="row mb-9">

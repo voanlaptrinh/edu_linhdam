@@ -232,18 +232,11 @@
 								<a class="nav-link {{ in_array(Request::route()->getName(), ['products.admin', 'products.create', 'products.edit', 'products.detailadmin']) ? 'active' : '' }}" href="{{route('products.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-cart"></i></span>
-										<span class="nav-link-text">Sản phẩm</span>
+										<span class="nav-link-text">Giới thiệu sách</span>
 									</div>
 								</a>
 							</li>
-							{{-- <li class="nav-item">
-								<a class="nav-link {{ in_array(Request::route()->getName(), ['categorys.admin', 'categorys.create', 'categorys.edit']) ? 'active' : '' }}" href="{{route('categorys.admin')}}">
-									<div class="d-flex align-items-center">
-										<span class="nav-link-icon"><i class="bi bi-list-task"></i></span>
-										<span class="nav-link-text">Danh mục</span>
-									</div>
-								</a>
-							</li> --}}
+							
 							<li class="nav-item">
 								<a class="nav-link {{ in_array(Request::route()->getName(), ['news.admin', 'news.create', 'news.edit', 'news.admin.detail']) ? 'active' : '' }}" href="{{route('news.admin')}}">
 									<div class="d-flex align-items-center">
@@ -292,7 +285,14 @@
 									</div>
 								</a>
 							</li>
-							
+							<li class="nav-item">
+								<a class="nav-link " href="{{route('feelings.admin')}}">
+									<div class="d-flex align-items-center">
+										<span class="nav-link-icon"><i class="bi bi-file-font"></i></span>
+										<span class="nav-link-text">Cảm nhận</span>
+									</div>
+								</a>
+							</li>
 
 						
 						</ul>
@@ -324,7 +324,7 @@
 								<a class="nav-link {{ in_array(Request::route()->getName(),  ['products.admin', 'products.create', 'products.edit', 'products.detailadmin']) ? 'active' : '' }}" href="{{route('products.admin')}}">
 									<div class="d-flex align-items-center">
 										<span class="nav-link-icon"><i class="bi bi-cart"></i></span>
-										<span class="nav-link-text">Sản phẩm</span>
+										<span class="nav-link-text">Giới thiệu sách</span>
 									</div>
 								</a>
 							</li>
