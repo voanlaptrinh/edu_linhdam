@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountAdminController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\DashboashController;
 use App\Http\Controllers\Admin\FeelingController;
@@ -96,6 +98,13 @@ Route::prefix('/admin')->group(function () {
     Route::prefix('/infomation')->group(function () {
         Route::get('/', [InfomationController::class, 'index'])->name('infomation.admin');
         Route::put('/update', [InfomationController::class, 'update'])->name('infomation.update');
+    });
+    Route::prefix('contact')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('contact.admin');
+        Route::post('/toggle/{id}', [ContactController::class, 'toggleApproval'])->name('contact.toggle');
+    });
+    Route::prefix('accout-admin')->group(function () {
+        Route::get('/', [AccountAdminController::class, 'index'])->name('account.admin');
     });
     Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
     Route::post('/delete-image', [UploadController::class, 'deleteImage'])->name('delete-image');

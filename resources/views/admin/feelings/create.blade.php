@@ -58,18 +58,18 @@
                                 <div class="col-6">
                                     <!-- input -->
                                     <label for="blognewTitle" class="form-label">Đánh giá</label>
-                                    {{-- <input type="text" name="rating" class="form-control" id="rating"
-                                        placeholder="Tiêu đề tin tức" value="{{old('rating')}}" /> --}}
-                                        <select name="rating" class="form-control" id="">
-                                            <option value="1">1 sao</option>
-                                            <option value="2">2 sao</option>
-                                            <option value="3">3 sao</option>
-                                            <option value="4">4 sao</option>
-                                            <option value="5">5 sao</option>
-                                        </select>
+                                    <select name="rating" class="form-control" id="rating">
+                                        <option value="1" {{ old('rating') == 1 ? 'selected' : '' }}>1 sao</option>
+                                        <option value="2" {{ old('rating') == 2 ? 'selected' : '' }}>2 sao</option>
+                                        <option value="3" {{ old('rating') == 3 ? 'selected' : '' }}>3 sao</option>
+                                        <option value="4" {{ old('rating') == 4 ? 'selected' : '' }}>4 sao</option>
+                                        <option value="5" {{ old('rating') == 5 ? 'selected' : '' }}>5 sao</option>
+                                    </select>
+                                    
                                     @error('rating')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
+                                    
 
                                 </div>
                                </div>
