@@ -27,7 +27,24 @@
                     <div class="col-lg-12 col-12">
                         <div class="card card-lg">
                             <div class="card-body p-6 d-flex flex-column gap-3">
-                                
+                                <div
+                                class="d-flex flex-column flex-md-row align-items-center mb-4 file-input-wrapper gap-2">
+                                <div>
+                                    <img class="image avatar avatar-lg rounded-3" src="{{ asset($imfomations->image) }}"
+                                        alt="Image">
+                                </div>
+
+                                <div class="file-upload btn btn-light ms-md-4">
+                                    <input type="file" name="image" id="image" class="file-input opacity-0"
+                                        accept="image/*">
+                                    Upload Photo
+                                </div>
+
+                                <span class="ms-2">JPG, GIF or PNG. 1MB Max.</span>
+                                @error('image')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
                                 <div class="col-12">
                                     <!-- input -->
                                     <label for="blognewTitle" class="form-label">Tiêu đề</label>

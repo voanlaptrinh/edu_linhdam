@@ -32,11 +32,26 @@ class InfomationController extends Controller
 
         // Find the existing Infomations model based on some criteria (you might use ID or some unique identifier)
         $infomations = Infomations::find(1);
+        $imagePath = $infomations->image; // Lấy đường dẫn ảnh cũ
+        if ($request->hasFile('image')) {
+            // Nếu bài viết đã có ảnh cũ, xóa ảnh cũ khỏi thư mục
+            if ($infomations->image && file_exists(public_path($infomations->image))) {
+                unlink(public_path($infomations->image));
+            }
+
+            // Lưu ảnh mới vào thư mục `public/source/dataimages`
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('source/dataimages'), $imageName);
+            $imagePath = 'source/dataimages/' . $imageName;
+        }
 
         // Update the model with the validated data
         $infomations->name = $request->name;
         $infomations->description = $request->description;
         $infomations->content = $request->content;
+        $infomations->image = $imagePath;
+      
         // Update other fields
 
         // Save the model to the database

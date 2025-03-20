@@ -10,6 +10,7 @@ class Infomations extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'image',
         'description',
         'content'
     ];
