@@ -60,14 +60,15 @@
 
     <!-- Sidebar Mobile -->
     <div class="sidebar" id="mobileSidebar">
-        <div class="p-2 d-flex justify-content-between align-items-center"> 
-           <div>
-            <img src="{{ asset(get_config()->logo) }}" alt="" width="70px" height="70px" style="border-radius: 10%">
-            {{ get_config()->name }}
-           </div>
-           <div>
-            <a href="javascript:void(0)" id="closeSidebar"><i class="fas fa-times"></i></a>
-           </div>
+        <div class="p-2 d-flex justify-content-between align-items-center">
+            <div>
+                <img src="{{ asset(get_config()->logo) }}" alt="" width="70px" height="70px"
+                    style="border-radius: 10%">
+                {{ get_config()->name }}
+            </div>
+            <div>
+                <a href="javascript:void(0)" id="closeSidebar"><i class="fas fa-times"></i></a>
+            </div>
         </div>
         <hr>
         <div class="menu-item">
@@ -81,7 +82,7 @@
                 <a href="#">Hóa học</a>
             </div>
         </div>
-        
+
 
         <a href="#">Tin tức</a>
         <hr>
@@ -111,86 +112,111 @@
 
     </div>
 
-
-
-    <section class="bd-about-area section-space theme-bg p-relative bd-noise-bg">
+    <section class="bd-event-area section-space p-relative">
         <div class="container">
-            <div class="bd-about-shape-wrap">
-                <div class="shape-1"><img src="assets/images/shape/about-solid-circle.webp" alt="shape"></div>
-                <div class="shape-2"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/about-book-shape.webp" alt="shape"></div>
-                <div class="shape-3"><img src="assets/images/shape/about-wave-shape.webp" alt="shape"></div>
-                <div class="shape-4"><img src="assets/images/shape/about-circle.webp" alt="shape"></div>
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="bd-section-title-wrapper section-title-space text-center">
+                        <span class="bd-section-subtitle">Bản tin</span>
+                        <h2 class="bd-section-title">Khóa học</h2>
+                    </div>
+                </div>
             </div>
-            <div class="row g-5">
-                <div class="col-xl-6 col-lg-6 col-md-12">
-                    <div class="bd-about-wrapper style-one">
-                        <div class="bd-about-thumb-inner">
-                            <div class="bd-about-thumb-wrapper">
-                                <div class="bd-about-thumb">
-                                    <img src="assets/images/about/about-thumb-01.webp" alt="image">
-                                </div>
-                                <div class="bd-about-thumb-small">
-                                    <img src="assets/images/about/about-thumb-small-01.webp" alt="image">
-                                </div>
+            <div class="row gy-30 justify-content-center">
+                <div class="col-xl-10 col-lg-12">
+                    <div class="bd-event-wrapper style-three">
+                        <div class="bd-event-item">
+                            <div class="bd-event-thumb">
+                                <a href="event-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/event/event-thumb-07.webp" alt="image" style="width: 100%">
+                                </a>
                             </div>
-                            <div class="bd-about-thumb-shape">
-                                <img src="assets/images/shape/dot-shape-01.webp" alt="image">
+                            <div class="bd-event-content">
+                                <div class="bd-content-inner">
+                                    <h5 class="bd-event-title underline mb-20">
+                                        <a href="event-details.html">Celebrating Creativity The Tiny Tot Talent
+                                            Showcase Extravaganza</a>
+                                    </h5>
+                                    <div class="bd-event-meta">
+                                        <div class="bd-event-meta-list">
+                                            <span><i class="fa-regular fa-calendar-days"></i> 15 Aug 2024</span>
+                                        </div>
+                                        <div class="bd-event-meta-list">
+                                            <span><i class="fa-regular fa-clock"></i> 10:00am - 12:00pm</span>
+                                        </div>
+                                        <div class="bd-event-meta-list">
+                                            <span><i class="fa-regular fa-location-dot"></i> Beilly Tower</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bd-event-btn">
+                                    <a class="bd-btn btn-outline-primary" href="event-details.html">View Details</a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-12">
-                    <div class="bd-about-wrapper style-one">
-                        <div class="bd-about-content-wrapper">
+              
+
+            </div>
+        </div>
+        <div class="bd-event-shape">
+            <div class="shape-1"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/land2.png"
+                    alt="shape" class="art-shape"></div>
+            <div class="shape-2"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/kides-1.png"
+                    alt="shape"></div>
+            <div class="shape-3"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/kides-2.png"
+                    alt="shape"></div>
+        </div>
+    </section>
+    <section class="bd-live-class-area theme-bg-05 section-space position-relative">
+        <div class="bd-live-class-shape-wrapper d-none d-lg-block">
+            <div class="bd-live-class-shape-01 d-none d-xxl-block">
+                <img src="https://html.topylo.com/istudy-prv/assets/images/shape/art-shape.webp" alt="image"
+                    class="art-shape">
+            </div>
+            <div class="bd-live-class-shape-02">
+                <img src="https://html.topylo.com/istudy-prv/assets/images/shape/bulb-shape.webp" alt="image"
+                    class="art-shape">
+            </div>
+            <div class="bd-live-class-shape-03">
+                <img src="https://html.topylo.com/istudy-prv/assets/images/shape/book-shape.webp" alt="image"
+                    class="art-shape">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row g-30 align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="bd-live-class-wrapper style-one">
+                        <div class="bd-live-class-section-wrapper">
                             <div class="bd-section-title-wrapper">
-                                <span class="bd-section-subtitle text-secondary">About Us</span>
-                                <h2 class="bd-section-title white-text mb-20">A New Different Way To Improve Your <span class="down-mark-line">Skills</span></h2>
-                                <p class="bd-section-paragraph has-border-sec">Education is one of the most essential and
-                                    valuable assets that an individual can possess, It plays a pivotal role in shaping</p>
+                                <span class="bd-section-subtitle">Live &amp; Learn</span>
+                                <h2 class="bd-section-title mb-20">Join Our <span
+                                        class="has-live-text">live</span><br>Learning Live Class</h2>
+                                <p class="bd-section-paragraph">A dynamic live session where kindergarten students
+                                    can participate in a structured learning environment. The class covers essential
+                                    topics such as language, math, and creative arts, encouraging active
+                                    participation and hands-on learning</p>
                             </div>
-                            <div class="bd-about-feature-list">
-                                <div class="bd-about-feature-item">
-                                    <div class="bd-about-feature-icon">
-                                        <span><i class="icon-online-class"></i></span>
-                                    </div>
-                                    <div class="bd-about-feature-content">
-                                        <h6 class="bd-about-feature-title">Flexible Classes</h6>
-                                        <p class="bd-about-feature-desc">The Flexible Classes feature allows
-                                            students to customize their learning schedule</p>
-                                    </div>
-                                </div>
-                                <div class="bd-about-feature-item">
-                                    <div class="bd-about-feature-icon">
-                                        <span><i class="icon-expert-trainers"></i></span>
-                                    </div>
-                                    <div class="bd-about-feature-content">
-                                        <h6 class="bd-about-feature-title">Expert Trainers</h6>
-                                        <p class="bd-about-feature-desc">All trainers hold relevant
-                                            certifications and advanced degrees, guaranteeing that you are learning
-                                            from qualified experts</p>
-                                    </div>
-                                </div>
-                                <div class="bd-about-feature-item">
-                                    <div class="bd-about-feature-icon">
-                                        <span><i class="icon-career-growth"></i></span>
-                                    </div>
-                                    <div class="bd-about-feature-content">
-                                        <h6 class="bd-about-feature-title">Build Your Career</h6>
-                                        <p class="bd-about-feature-desc">Prepare for job interviews with mock
-                                            interview sessions, feedback, and tips on how to present yourself
-                                            confidently</p>
-                                    </div>
-                                </div>
+                            <div class="bd-live-class-btn">
+                                <a class="btn btn-success" href="webinar-details.html">Join Live Class</a>
                             </div>
-                            <div class="bd-about-btn">
-                                <a class="bd-btn btn-secondary-white" href="about-online-course.html">Know More</a>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="bd-live-class-thumb-wrapper style-one">
+                        <div class="bd-live-class-thumb">
+                            <img src="https://html.topylo.com/istudy-prv/assets/images/live-class/live-class-thumb-01.webp"
+                                alt="image">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
 
 
@@ -218,22 +244,22 @@
         });
 
         document.querySelectorAll(".toggle").forEach(icon => {
-    icon.addEventListener("click", function(event) {
-        let submenu = this.parentElement.nextElementSibling; // Lấy submenu
+            icon.addEventListener("click", function(event) {
+                let submenu = this.parentElement.nextElementSibling; // Lấy submenu
 
-        // Đảo trạng thái dropdown
-        if (submenu) {
-            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-        }
+                // Đảo trạng thái dropdown
+                if (submenu) {
+                    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                }
 
-        // Đổi icon
-        this.classList.toggle("fa-chevron-down");
-        this.classList.toggle("fa-chevron-up");
+                // Đổi icon
+                this.classList.toggle("fa-chevron-down");
+                this.classList.toggle("fa-chevron-up");
 
-        event.stopPropagation(); // Ngăn chặn sự kiện lan lên thẻ <a>
-        event.preventDefault(); // Ngăn trình duyệt không nhảy link khi nhấn icon
-    });
-});
+                event.stopPropagation(); // Ngăn chặn sự kiện lan lên thẻ <a>
+                event.preventDefault(); // Ngăn trình duyệt không nhảy link khi nhấn icon
+            });
+        });
 
 
         document.querySelectorAll('.nav-item.dropdown').forEach(item => {
