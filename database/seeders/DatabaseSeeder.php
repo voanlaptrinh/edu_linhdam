@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'gg_analytic' => 'YOUR_GOOGLE_ANALYTICS_ID',
             'phone' => '0987654321',
             'email' => 'admin@shoppbook.com',
-            'logo' => '/source/images/logo/freshcart-logo.png',
+            'logo' => '/source/images/logo_edu_linhdam.png',
             'tiktok' => 'tiktok.com/shoppbook',
             'description' => 'Chào mừng bạn đến với Shopp Book',
             'facebook' => 'facebook.com/shoppbook',
