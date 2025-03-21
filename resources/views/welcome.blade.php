@@ -7,7 +7,7 @@
     <title>Menu Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('source/users/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/source/users/css/style.css') }}">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -572,8 +572,8 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            
+
+
                         </div>
 
                     </div>
@@ -584,20 +584,76 @@
 
         </div>
     </section>
+    <section class="bd-instructor-area section-space theme-bg p-relative z-index-11">
+        <div class="bd-kinder-bg"
+            data-background="https://html.topylo.com/istudy-prv/assets/images/testimonial/testimonial-shape-bg.webp"
+            style="background-image: url(&quot;https://html.topylo.com/istudy-prv/assets/images/testimonial/testimonial-shape-bg.webp&quot;);">
+        </div>
+        <div class="bd-kinder-bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="bd-section-title-wrapper section-title-space text-center">
+                        <span class="bd-section-subtitle secondary" style="color:#FFBB2A ">Instructor</span>
+                        <h2 class="bd-section-title white-text">Our Experience Teacher </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-30">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="bd-instructor-wrapper style-nine light-color">
+                        <div class="bd-instructor-item">
+                            <div class="bd-instructor-thumb-wrap">
+                                <div class="bd-instructor-thumb">
+                                    <a href="instructor-details.html"><img
+                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-05.webp"
+                                            alt="image" class="img-accoute"></a>
+                                </div>
+                                <div class="bd-instructor-social theme-social has-white circle text-center">
+                                    <ul class="social-icon-list">
+                                        <li class="bd-icon-1"><a href="#"><i class="fab fa-facebook "></i></a>
+                                        </li>
+                                        <li class="bd-icon-2"><a href="#"><i class="fab fa-github "></i></a>
+                                        </li>
+                                        <li class="bd-icon-3"><a href="#"><i
+                                                    class="fab fa-linkedin-in "></i></a></li>
+                                        <li class="bd-icon-4"><a href="#"><i class="fab fa-instagram "></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bd-instructor-info">
+                                <h6 class="name underline-two"><a class="text-black"
+                                        href="instructor-details.html">Ethan K. Smith</a>
+                                </h6>
+                                <span>Child Development Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <section class="bd-cta-area section-space">
         <div class="container">
             <div class="bd-newsletter-wrapper style-three">
-                <div class="bd-newsletter-bg" data-background="https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp" style="background-image: url(&quot;https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp&quot;);"></div>
+                <div class="bd-newsletter-bg"
+                    data-background="https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp"
+                    style="background-image: url(&quot;https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp&quot;);">
+                </div>
                 <div class="row align-items-center justify-content-between g-30">
                     <div class="col-xxl-5 col-xl-6 col-lg-6 col-12 d-none d-lg-block">
                         <div class="bd-newsletter-thumb-wrapper p-relative">
                             <div class="thumb">
-                                <img src="https://html.topylo.com/istudy-prv/assets/images/newsletter/newsletter-thumb-02.webp" alt="image">
+                                <img src="https://html.topylo.com/istudy-prv/assets/images/newsletter/newsletter-thumb-02.webp"
+                                    alt="image">
                             </div>
                             <div class="bd-newsletter-badge">
                                 <div class="bd-newsletter-badge-thumb">
-                                    <img src="https://html.topylo.com/istudy-prv/assets/images/icon/logo.webp" alt="image">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/icon/logo.webp"
+                                        alt="image">
                                 </div>
                                 <div class="bd-newsletter-badge-text">
                                     <span>Hi There! <br>
@@ -626,6 +682,228 @@
             </div>
         </div>
     </section>
+
+
+
+    <section class="bd-blog-area section-space-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="bd-section-title-wrapper section-title-space text-center">
+                    <span class="bd-section-subtitle">latest news</span>
+                    <h2 class="bd-section-title">Our Latest Articles</h2>
+                </div>
+            </div>
+            <div class="swiper mySwiperNews">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="bd-blog-wrapper style-eight">
+                            <div class="bd-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/blog/blog-thumb-10.webp"
+                                        alt="image">
+                                </a>
+                            </div>
+                            <div class="bd-blog-content">
+                                <div class="date">
+                                    <span>10 Aug 2024</span>
+                                </div>
+                                <h5 class="bd-blog-title underline"><a href="blog-details.html">Creativity Work Art
+                                        Sparks Growth</a></h5>
+                                <p>In the process of creating art, children exercise their imagination...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="bd-blog-wrapper style-eight">
+                            <div class="bd-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/blog/blog-thumb-10.webp"
+                                        alt="image">
+                                </a>
+                            </div>
+                            <div class="bd-blog-content">
+                                <div class="date">
+                                    <span>10 Aug 2024</span>
+                                </div>
+                                <h5 class="bd-blog-title underline"><a href="blog-details.html">Creativity Work Art
+                                        Sparks Growth</a></h5>
+                                <p>In the process of creating art, children exercise their imagination...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="bd-blog-wrapper style-eight">
+                            <div class="bd-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/blog/blog-thumb-10.webp"
+                                        alt="image">
+                                </a>
+                            </div>
+                            <div class="bd-blog-content">
+                                <div class="date">
+                                    <span>10 Aug 2024</span>
+                                </div>
+                                <h5 class="bd-blog-title underline"><a href="blog-details.html">Creativity Work Art
+                                        Sparks Growth</a></h5>
+                                <p>In the process of creating art, children exercise their imagination...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="bd-blog-wrapper style-eight">
+                            <div class="bd-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/blog/blog-thumb-10.webp"
+                                        alt="image">
+                                </a>
+                            </div>
+                            <div class="bd-blog-content">
+                                <div class="date">
+                                    <span>10 Aug 2024</span>
+                                </div>
+                                <h5 class="bd-blog-title underline"><a href="blog-details.html">Creativity Work Art
+                                        Sparks Growth</a></h5>
+                                <p>In the process of creating art, children exercise their imagination...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="bd-blog-wrapper style-eight">
+                            <div class="bd-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/blog/blog-thumb-10.webp"
+                                        alt="image">
+                                </a>
+                            </div>
+                            <div class="bd-blog-content">
+                                <div class="date">
+                                    <span>10 Aug 2024</span>
+                                </div>
+                                <h5 class="bd-blog-title underline"><a href="blog-details.html">Creativity Work Art
+                                        Sparks Growth</a></h5>
+                                <p>In the process of creating art, children exercise their imagination...</p>
+                            </div>
+                        </article>
+                    </div>
+
+                   
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="fix">
+        <div class="bd-footer-area section-space primary-bg theme-bg-05">
+            <div class="container">
+                <div class="row gy-30 justify-content-between">
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-sm-12">
+                        <div class="bd-footer-widget footer-1-col-1">
+                            <div class="bd-footer-widget-content">
+                                <div class="bd-footer-widget-logo">
+                                    <a href="index.html">
+                                        <img src="{{ asset(get_config()->logo) }}" alt="image" width="80" height="80">
+                                    </a>
+                                </div>
+                                <p class="bd-footer-widget-description">Education focused website or template is an
+                                    essential part that provides visitors with insights into the program. </p>
+                                <div class="bd-footer-widget-contact-info">
+                                    <div class="bd-footer-widget-contact-item">
+                                        <span>Phone:</span>
+                                        <a href="tell:123456789">
+                                            +123-4567-8900</a>
+                                    </div>
+                                    <div class="bd-footer-widget-contact-item">
+                                        <span>Email:</span>
+                                        <a href="mailto:istudy@mail.com"> istudy@mail.com</a>
+                                    </div>
+                                    <div class="bd-footer-widget-contact-item">
+                                        <span>Address:</span>
+                                        <a href="#"> 27 Division St, New York</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="bd-footer-widget footer-1-col-2">
+                            <h6 class="bd-footer-widget-title">Online Platform</h6>
+                            <div class="bd-footer-widget-links list-none">
+                                <ul>
+                                    <li class="underline"><a href="about-university.html">About Us</a></li>
+                                    <li class="underline"><a href="courses-grid-right.html">Our Programs</a></li>
+                                    <li class="underline"><a href="event.html">Events</a></li>
+                                    <li class="underline"><a href="instructor.html">Instructor</a></li>
+                                    <li class="underline"><a href="instructor-details.html">Instructor Details</a></li>
+                                    <li class="underline"><a href="apply-online.html">Admission</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="bd-footer-widget footer-1-col-3">
+                            <h6 class="bd-footer-widget-title">Useful Links</h6>
+                            <div class="bd-footer-widget-links list-none">
+                                <ul>
+                                    <li class="underline"><a href="contact.html">Contact Us</a></li>
+                                    <li class="underline"><a href="blog.html">Latest News</a></li>
+                                    <li class="underline"><a href="faq.html">FAQ’s</a></li>
+                                    <li class="underline"><a href="gallery.html">Gallery</a></li>
+                                    <li class="underline"><a href="mvs.html">Vision &amp; Mission</a></li>
+                                    <li class="underline"><a href="sign-in.html">Sign In</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-sm-12">
+                        <div class="bd-footer-widget footer-1-col-4">
+                            <h6 class="bd-footer-widget-title mb-20">Stay Connected</h6>
+                            <div class="bd-footer-from-content mb-20">
+                                <div class="bd-footer-social">
+                                    <div class="theme-social social-brand-color">
+                                        <ul class="social-icon-list">
+                                            <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a>
+                                            </li>
+                                            <li><a class="twitter" href="#"><i class="fab fa-github"></i></a>
+                                            </li>
+                                            <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bd-footer-copyright-area style-three pt-15 pb-15">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="bd-footer-copyright text-center">
+                            <p class="underline">© Copyright <span id="year">2025</span> Developed By iStudy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
 
 
     <!-- jQuery & Slick JS -->
@@ -713,6 +991,35 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+        });
+        var swiper = new Swiper(".mySwiperNews", {
+            loop: true, // Chạy lặp vô hạn
+            autoplay: {
+                delay: 300000, // Chuyển slide sau 3 giây
+                disableOnInteraction: false, // Không dừng khi thao tác
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                }, // Mobile: 1 slide
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                }, // Tablet: 2 slides
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                } // PC: 4 slides
+            }
         });
     </script>
 </body>
