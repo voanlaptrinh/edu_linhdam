@@ -41,9 +41,9 @@
                             Môn học <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Toán</a></li>
-                            <li><a class="dropdown-item" href="#">Vật lý</a></li>
-                            <li><a class="dropdown-item" href="#">Hóa học</a></li>
+                            <li><a class="dropdown-item" href="#">Toán lớp 1</a></li>
+                            <li><a class="dropdown-item" href="#">Vật lý lớp 2</a></li>
+                            <li><a class="dropdown-item" href="#">Hóa học lớp 3</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -93,7 +93,7 @@
 
 
 
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper bannaer_slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img
                     src="https://www.mysaifco.com/wp-content/uploads/2024/11/img-world-of-advanture-Marvel-Zone.jpg"
@@ -112,65 +112,297 @@
 
     </div>
 
-    <section class="bd-event-area section-space p-relative">
+    <section class="bd-course-area section-space">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-6">
+                <div class="col-xl-8">
                     <div class="bd-section-title-wrapper section-title-space text-center">
-                        <span class="bd-section-subtitle">Bản tin</span>
-                        <h2 class="bd-section-title">Khóa học</h2>
+                        <span class="bd-section-subtitle">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Các khóa học thịnh hành</font>
+                            </font>
+                        </span>
+                        <h2 class="bd-section-title">
+                            <span class="down-mark-line">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Khóa học</font>
+                                </font>
+                            </span>
+                        </h2>
                     </div>
                 </div>
             </div>
-            <div class="row gy-30 justify-content-center">
-                <div class="col-xl-10 col-lg-12">
-                    <div class="bd-event-wrapper style-three">
-                        <div class="bd-event-item">
-                            <div class="bd-event-thumb">
-                                <a href="event-details.html">
-                                    <img src="https://html.topylo.com/istudy-prv/assets/images/event/event-thumb-07.webp" alt="image" style="width: 100%">
-                                </a>
-                            </div>
-                            <div class="bd-event-content">
-                                <div class="bd-content-inner">
-                                    <h5 class="bd-event-title underline mb-20">
-                                        <a href="event-details.html">Celebrating Creativity The Tiny Tot Talent
-                                            Showcase Extravaganza</a>
-                                    </h5>
-                                    <div class="bd-event-meta">
-                                        <div class="bd-event-meta-list">
-                                            <span><i class="fa-regular fa-calendar-days"></i> 15 Aug 2024</span>
-                                        </div>
-                                        <div class="bd-event-meta-list">
-                                            <span><i class="fa-regular fa-clock"></i> 10:00am - 12:00pm</span>
-                                        </div>
-                                        <div class="bd-event-meta-list">
-                                            <span><i class="fa-regular fa-location-dot"></i> Beilly Tower</span>
-                                        </div>
+            <div class="row gy-30">
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="bd-course-wrapper style-seven shadow">
+                        <a href="courses-details.html"
+                            class="bd-course-thumb-wrapper bd-course-thumb-style p-relative">
+
+                            <div class="bd-course-thumb-bg bg-1"><img
+                                    src="https://html.topylo.com/istudy-prv/assets/images/course/course-bg-1.webp"
+                                    alt="hình ảnh"></div>
+                            <div class="bd-course-thumb-instructor center"><img
+                                    src="https://images2.thanhnien.vn/zoom/686_429/Uploaded/nthanhluan/2022_04_15/dangky-2362.jpeg"
+                                    alt="người hướng dẫn"></div>
+
+                        </a>
+                        <div class="bd-course-content">
+
+                            <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                    class="bd-course-title-a">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Làm chủ Khoa học dữ liệu từ đầu</font>
+                                    </font>
+                                </a></h5>
+                            <p class="bd-course-description mb-10">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Phát triển sự nghiệp của bạn với các kỹ năng
+                                        khoa học dữ liệu đang có nhu cầu cao trong nhiều ngành.</font>
+                                </font>
+                            </p>
+
+                        </div>
+                        <div class="bd-course-info">
+                            <div class="bd-course-info-wrapper">
+
+                                <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                        class="bd-course-title-a">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Kỹ thuật khoa học dữ liệu nâng cao
+                                            </font>
+                                        </font>
+                                    </a></h5>
+
+                                <p>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Đi sâu vào các thuật toán học máy, trực
+                                            quan hóa dữ liệu và phân tích thống kê.ádddddddddddddddđqưeqưeqưeqưeqưeqưe
+                                        </font>
+                                    </font>
+                                </p>
+                                <div class="bd-course-info-list">
+
+
+                                    <div class="bd-course-action-btn d-flex align-items-center gap-15">
+                                        <a href="courses-details.html" class="bd-btn btn-outline-border-primary">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Xem chi tiết</font>
+                                            </font>
+                                        </a>
+
                                     </div>
                                 </div>
-                                <div class="bd-event-btn">
-                                    <a class="bd-btn btn-outline-primary" href="event-details.html">View Details</a>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-              
 
+
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="bd-course-wrapper style-seven shadow">
+                        <a href="courses-details.html"
+                            class="bd-course-thumb-wrapper bd-course-thumb-style p-relative">
+
+                            <div class="bd-course-thumb-bg bg-1"><img
+                                    src="https://html.topylo.com/istudy-prv/assets/images/course/course-bg-1.webp"
+                                    alt="hình ảnh"></div>
+                            <div class="bd-course-thumb-instructor center"><img
+                                    src="https://images2.thanhnien.vn/zoom/686_429/Uploaded/nthanhluan/2022_04_15/dangky-2362.jpeg"
+                                    alt="người hướng dẫn"></div>
+
+                        </a>
+                        <div class="bd-course-content">
+
+                            <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                    class="bd-course-title-a">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Làm chủ Khoa học dữ liệu từ đầu</font>
+                                    </font>
+                                </a></h5>
+                            <p class="bd-course-description mb-10">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Phát triển sự nghiệp của bạn với các kỹ năng
+                                        khoa học dữ liệu đang có nhu cầu cao trong nhiều ngành.</font>
+                                </font>
+                            </p>
+
+                        </div>
+                        <div class="bd-course-info">
+                            <div class="bd-course-info-wrapper">
+
+                                <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                        class="bd-course-title-a">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Kỹ thuật khoa học dữ liệu nâng cao
+                                            </font>
+                                        </font>
+                                    </a></h5>
+
+                                <p>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Đi sâu vào các thuật toán học máy, trực
+                                            quan hóa dữ liệu và phân tích thống kê.ádddddddddddddddđqưeqưeqưeqưeqưeqưe
+                                        </font>
+                                    </font>
+                                </p>
+                                <div class="bd-course-info-list">
+
+
+                                    <div class="bd-course-action-btn d-flex align-items-center gap-15">
+                                        <a href="courses-details.html" class="bd-btn btn-outline-border-primary">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Xem chi tiết</font>
+                                            </font>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="bd-course-wrapper style-seven shadow">
+                        <a href="courses-details.html"
+                            class="bd-course-thumb-wrapper bd-course-thumb-style p-relative">
+
+                            <div class="bd-course-thumb-bg bg-1"><img
+                                    src="https://html.topylo.com/istudy-prv/assets/images/course/course-bg-1.webp"
+                                    alt="hình ảnh"></div>
+                            <div class="bd-course-thumb-instructor center"><img
+                                    src="https://images2.thanhnien.vn/zoom/686_429/Uploaded/nthanhluan/2022_04_15/dangky-2362.jpeg"
+                                    alt="người hướng dẫn"></div>
+
+                        </a>
+                        <div class="bd-course-content">
+
+                            <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                    class="bd-course-title-a">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Làm chủ Khoa học dữ liệu từ đầu</font>
+                                    </font>
+                                </a></h5>
+                            <p class="bd-course-description mb-10">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Phát triển sự nghiệp của bạn với các kỹ năng
+                                        khoa học dữ liệu đang có nhu cầu cao trong nhiều ngành.</font>
+                                </font>
+                            </p>
+
+                        </div>
+                        <div class="bd-course-info">
+                            <div class="bd-course-info-wrapper">
+
+                                <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                        class="bd-course-title-a">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Kỹ thuật khoa học dữ liệu nâng cao
+                                            </font>
+                                        </font>
+                                    </a></h5>
+
+                                <p>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Đi sâu vào các thuật toán học máy, trực
+                                            quan hóa dữ liệu và phân tích thống kê.ádddddddddddddddđqưeqưeqưeqưeqưeqưe
+                                        </font>
+                                    </font>
+                                </p>
+                                <div class="bd-course-info-list">
+
+
+                                    <div class="bd-course-action-btn d-flex align-items-center gap-15">
+                                        <a href="courses-details.html" class="bd-btn btn-outline-border-primary">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Xem chi tiết</font>
+                                            </font>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="bd-course-wrapper style-seven shadow">
+                        <a href="courses-details.html"
+                            class="bd-course-thumb-wrapper bd-course-thumb-style p-relative">
+
+                            <div class="bd-course-thumb-bg bg-1"><img
+                                    src="https://html.topylo.com/istudy-prv/assets/images/course/course-bg-1.webp"
+                                    alt="hình ảnh"></div>
+                            <div class="bd-course-thumb-instructor center"><img
+                                    src="https://images2.thanhnien.vn/zoom/686_429/Uploaded/nthanhluan/2022_04_15/dangky-2362.jpeg"
+                                    alt="người hướng dẫn"></div>
+
+                        </a>
+                        <div class="bd-course-content">
+
+                            <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                    class="bd-course-title-a">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Làm chủ Khoa học dữ liệu từ đầu</font>
+                                    </font>
+                                </a></h5>
+                            <p class="bd-course-description mb-10">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Phát triển sự nghiệp của bạn với các kỹ năng
+                                        khoa học dữ liệu đang có nhu cầu cao trong nhiều ngành.</font>
+                                </font>
+                            </p>
+
+                        </div>
+                        <div class="bd-course-info">
+                            <div class="bd-course-info-wrapper">
+
+                                <h5 class="bd-course-title underline mb-10"><a href="courses-details.html"
+                                        class="bd-course-title-a">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Kỹ thuật khoa học dữ liệu nâng cao
+                                            </font>
+                                        </font>
+                                    </a></h5>
+
+                                <p>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Đi sâu vào các thuật toán học máy, trực
+                                            quan hóa dữ liệu và phân tích thống kê.ádddddddddddddddđqưeqưeqưeqưeqưeqưe
+                                        </font>
+                                    </font>
+                                </p>
+                                <div class="bd-course-info-list">
+
+
+                                    <div class="bd-course-action-btn d-flex align-items-center gap-15">
+                                        <a href="courses-details.html" class="bd-btn btn-outline-border-primary">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Xem chi tiết</font>
+                                            </font>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="bd-course-btn d-flex-center mt-50">
+                    <a class="bd-btn btn-outline-border-primary" href="courses-grid.html">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Xem thêm các khóa học</font>
+                        </font>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="bd-event-shape">
-            <div class="shape-1"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/land2.png"
-                    alt="shape" class="art-shape"></div>
-            <div class="shape-2"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/kides-1.png"
-                    alt="shape"></div>
-            <div class="shape-3"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/kides-2.png"
-                    alt="shape"></div>
-        </div>
     </section>
-    <section class="bd-live-class-area theme-bg-05 section-space position-relative">
+    <section class="bd-live-class-area theme-bg-05 section-space position-relative" style="background: #c9dbbda6;">
         <div class="bd-live-class-shape-wrapper d-none d-lg-block">
             <div class="bd-live-class-shape-01 d-none d-xxl-block">
                 <img src="https://html.topylo.com/istudy-prv/assets/images/shape/art-shape.webp" alt="image"
@@ -217,7 +449,183 @@
         </div>
     </section>
 
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="bd-section-title-wrapper section-title-space text-center">
+                <span class="bd-section-subtitle">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Lời chứng nhận</font>
+                    </font>
+                </span>
+                <h2 class="bd-section-title">
+                    <span class="down-mark-line">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Học viên nói rằng</font>
+                        </font>
+                    </span>
+                </h2>
+            </div>
+            <div>
+                <div class="bd-testimonial-item p-relative">
 
+                    <div class="bd-testimonial-quotes-wrap" style="position: relative;">
+                        <div class="bd-testimonial-quotes">
+                            <img src="https://html.topylo.com/istudy-prv/assets/images/shape/testimonial-quotes-2.webp"
+                                alt="shape">
+                        </div>
+                        <div class="bd-testimonial-meta-thumb-1"><img
+                                src="https://html.topylo.com/istudy-prv/assets/images/testimonial/testimonial-sm-thumb-1.webp"
+                                alt="image">
+                        </div>
+                        <div class="bd-testimonial-meta-thumb-2"><img
+                                src="https://html.topylo.com/istudy-prv/assets/images/testimonial/testimonial-sm-thumb-2.webp"
+                                alt="image">
+                        </div>
+                        <div class="bd-testimonial-meta-thumb-3"><img
+                                src="https://html.topylo.com/istudy-prv/assets/images/testimonial/testimonial-sm-thumb-3.webp"
+                                alt="image">
+                        </div>
+                    </div>
+
+                    <!-- Swiper Container -->
+                    <div class="swiper mySwiper2 testimonialActiveFour">
+                        <div class="swiper-wrapper ">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="bd-testimonial-content">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="description">“My time at iStudy University has been
+                                        life-changing. The courses are well-structured, and the resources
+                                        provided are top-notch. I’ve gained both practical knowledge and
+                                        lifelong friendships here.”</p>
+                                    <div class="bd-testimonial-meta">
+                                        <div class="author">
+                                            <div class="thumb">
+                                                <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
+                                                    alt="student">
+                                            </div>
+                                            <div class="details">
+                                                <h6 class="name">David Chowdhury</h6>
+                                                <p class="designation">Business Administration Student</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bd-testimonial-content">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="description">“My time at iStudy University has been
+                                        life-changing. The courses are well-structured, and the resources
+                                        provided are top-notch. I’ve gained both practical knowledge and
+                                        lifelong friendships here.”</p>
+                                    <div class="bd-testimonial-meta">
+                                        <div class="author">
+                                            <div class="thumb">
+                                                <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
+                                                    alt="student">
+                                            </div>
+                                            <div class="details">
+                                                <h6 class="name">David Chowdhury</h6>
+                                                <p class="designation">Business Administration Student</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bd-testimonial-content">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="description">“My time at iStudy University has been
+                                        life-changing. The courses are well-structured, and the resources
+                                        provided are top-notch. I’ve gained both practical knowledge and
+                                        lifelong friendships here.”</p>
+                                    <div class="bd-testimonial-meta">
+                                        <div class="author">
+                                            <div class="thumb">
+                                                <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
+                                                    alt="student">
+                                            </div>
+                                            <div class="details">
+                                                <h6 class="name">David Chowdhury</h6>
+                                                <p class="designation">Business Administration Student</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bd-cta-area section-space">
+        <div class="container">
+            <div class="bd-newsletter-wrapper style-three">
+                <div class="bd-newsletter-bg" data-background="https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp" style="background-image: url(&quot;https://html.topylo.com/istudy-prv/assets/images/bg/newsletter-bg-01.webp&quot;);"></div>
+                <div class="row align-items-center justify-content-between g-30">
+                    <div class="col-xxl-5 col-xl-6 col-lg-6 col-12 d-none d-lg-block">
+                        <div class="bd-newsletter-thumb-wrapper p-relative">
+                            <div class="thumb">
+                                <img src="https://html.topylo.com/istudy-prv/assets/images/newsletter/newsletter-thumb-02.webp" alt="image">
+                            </div>
+                            <div class="bd-newsletter-badge">
+                                <div class="bd-newsletter-badge-thumb">
+                                    <img src="https://html.topylo.com/istudy-prv/assets/images/icon/logo.webp" alt="image">
+                                </div>
+                                <div class="bd-newsletter-badge-text">
+                                    <span>Hi There! <br>
+                                        Welcome to iStudy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-6 col-lg-6 col-12">
+                        <div class="newsletter-content">
+                            <div class="bd-section-title-wrapper mb-30">
+                                <h2 class="bd-section-title text-white mb-0">Subscribe to Our Newsletter!</h2>
+                            </div>
+                            <div class="bd-newsletter-form">
+                                <form action="#">
+                                    <div class="bd-newsletter-input">
+                                        <input type="text" placeholder="Your email">
+                                        <button type="submit" class="bd-btn btn-primary radius-6">Subscribe
+                                            Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- jQuery & Slick JS -->
@@ -280,6 +688,21 @@
             loop: true, // Lặp vô hạn
             autoplay: {
                 delay: 3000, // Chuyển slide sau 3 giây
+                disableOnInteraction: false, // Không dừng khi thao tác
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            loop: false, // Lặp vô hạn
+            autoplay: {
+                delay: 300000, // Chuyển slide sau 3 giây
                 disableOnInteraction: false, // Không dừng khi thao tác
             },
             navigation: {
