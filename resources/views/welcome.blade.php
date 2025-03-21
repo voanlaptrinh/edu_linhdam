@@ -27,15 +27,11 @@
             <div class="collapse navbar-collapse d-none d-lg-block">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tin tức</a>
+                        <a class="nav-link" href="#">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tin tức</a>
+                        <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tin tức</a>
-                    </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link" id="menuDropdown">
                             Môn học <i class="fas fa-chevron-down"></i>
@@ -47,13 +43,24 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">Giảng viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cảm nhận</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu sách</a>
+                    </li>
+
+                   
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Tin tức</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
                 </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Đăng ký</a></li>
-                </ul>
+                
             </div>
         </div>
     </nav>
