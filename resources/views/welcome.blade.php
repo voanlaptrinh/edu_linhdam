@@ -656,8 +656,8 @@
                                         alt="image">
                                 </div>
                                 <div class="bd-newsletter-badge-text">
-                                    <span>Hi There! <br>
-                                        Welcome to iStudy</span>
+                                    <span>Xin chào! <br>
+                                        Chào mừng đến với {{ asset(get_config()->title) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -980,7 +980,7 @@
         var swiper2 = new Swiper(".mySwiper2", {
             loop: false, // Lặp vô hạn
             autoplay: {
-                delay: 300000, // Chuyển slide sau 3 giây
+                delay: 3000, // Chuyển slide sau 3 giây
                 disableOnInteraction: false, // Không dừng khi thao tác
             },
             navigation: {
@@ -995,7 +995,7 @@
         var swiper = new Swiper(".mySwiperNews", {
             loop: true, // Chạy lặp vô hạn
             autoplay: {
-                delay: 300000, // Chuyển slide sau 3 giây
+                delay: 3000, // Chuyển slide sau 3 giây
                 disableOnInteraction: false, // Không dừng khi thao tác
             },
             navigation: {
