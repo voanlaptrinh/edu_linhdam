@@ -10,7 +10,7 @@ class TeachersController extends Controller
 {
     public function index(Request $request)
     {
-        $teachers = Teacher::find(1);
+        $teachers = Teacher::all();
         return view('users.teachers.index', compact('teachers'));
     }
 }

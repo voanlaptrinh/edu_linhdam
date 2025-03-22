@@ -36,20 +36,22 @@
         <div class="container">
 
             <div class="row gy-30 pt-5">
+                @foreach ($teachers as $teacher)
+                    
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="bd-instructor-wrapper style-four">
                         <div class="bd-instructor-item">
                             <div class="bd-instructor-thumb-wrapper">
                                 <div class="bd-instructor-thumb">
                                     <a href="#"><img
-                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
+                                            src="{{ asset($teacher->avatar) }}" class="imgea-teacher"
                                             alt="image"></a>
                                 </div>
 
                             </div>
                             <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                <span>Math Instructor</span>
+                                <h6 class="name underline"><a href="">{{$teacher->name}}</a></h6>
+                                <span>{{$teacher->subject}}</span>
                             </div>
                         </div>
                     </div>
@@ -72,78 +74,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="bd-instructor-wrapper style-four">
-                        <div class="bd-instructor-item">
-                            <div class="bd-instructor-thumb-wrapper">
-                                <div class="bd-instructor-thumb">
-                                    <a href="#"><img
-                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
-                                            alt="image"></a>
-                                </div>
-
-                            </div>
-                            <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                <span>Math Instructor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="bd-instructor-wrapper style-four">
-                        <div class="bd-instructor-item">
-                            <div class="bd-instructor-thumb-wrapper">
-                                <div class="bd-instructor-thumb">
-                                    <a href="#"><img
-                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
-                                            alt="image"></a>
-                                </div>
-
-                            </div>
-                            <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                <span>Math Instructor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="bd-instructor-wrapper style-four">
-                        <div class="bd-instructor-item">
-                            <div class="bd-instructor-thumb-wrapper">
-                                <div class="bd-instructor-thumb">
-                                    <a href="#"><img
-                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
-                                            alt="image"></a>
-                                </div>
-
-                            </div>
-                            <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                <span>Math Instructor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="bd-instructor-wrapper style-four">
-                        <div class="bd-instructor-item">
-                            <div class="bd-instructor-thumb-wrapper">
-                                <div class="bd-instructor-thumb">
-                                    <a href="#"><img
-                                            src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
-                                            alt="image"></a>
-                                </div>
-
-                            </div>
-                            <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                <span>Math Instructor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
               
             </div>
         </div>

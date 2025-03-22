@@ -19,4 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/introduction', [IntroductionController::class, 'index'])->name('introduction.home');
-Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers.home');
+Route::prefix('/teachers')->group(function () {
+    Route::get('/', [TeachersController::class, 'index'])->name('teachers.home');
+    Route::get('/{alias}', [TeachersController::class, 'detail'])->name('teachers.detail.home');
+});
