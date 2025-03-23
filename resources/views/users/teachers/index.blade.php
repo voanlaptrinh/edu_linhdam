@@ -14,7 +14,7 @@
                                 <h1 class="bd-breadcrumb-title">Giáo viên</h1>
                                 <div class="bd-breadcrumb-list">
                                     <span><i class="fas fa-home"></i> <a
-                                            href="index.html">{{ get_config()->title }}</a></span>
+                                            href="{{route('home')}}">{{ get_config()->title }}</a></span>
                                     <span class="divider"><i class="fas fa-chevron-right"></i></span>
                                     <span class="active">Giáo viên</span>
                                 </div>
@@ -50,7 +50,7 @@
 
                             </div>
                             <div class="bd-instructor-info mt-15">
-                                <h6 class="name underline"><a href="">{{$teacher->name}}</a></h6>
+                                <h6 class="name underline"><a href="{{route('teachers.detail.home', ['alias' => $teacher->alias])}}">{{$teacher->name}}</a></h6>
                                 <span>{{$teacher->subject}}</span>
                             </div>
                         </div>

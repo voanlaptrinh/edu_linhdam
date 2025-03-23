@@ -13,4 +13,9 @@ class TeachersController extends Controller
         $teachers = Teacher::all();
         return view('users.teachers.index', compact('teachers'));
     }
+    public function detail($alias)
+    {
+        $teacher = Teacher::where('alias', $alias)->first();
+        return view('users.teachers.detail', compact('teacher'));
+    }
 }

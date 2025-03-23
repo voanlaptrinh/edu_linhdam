@@ -17,7 +17,7 @@
     
         <nav class="navbar navbar-dark navbar-expand-lg" id="header-sticky">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{route('home')}}">
                     <img src="{{ asset(get_config()->logo) }}" alt="" width="70px" height="70px"
                         style="border-radius: 10%">
                     {{ get_config()->name }}
@@ -28,10 +28,10 @@
                 <div class="collapse navbar-collapse d-none d-lg-block">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Trang chủ</a>
+                            <a class="nav-link" href="{{route('home')}}">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giới thiệu</a>
+                            <a class="nav-link" href="{{route('introduction.home')}}">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="menuDropdown">
@@ -44,13 +44,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giảng viên</a>
+                            <a class="nav-link" href="{{route('teachers.home')}}">Giảng viên</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Cảm nhận</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giới thiệu sách</a>
+                            <a class="nav-link" href="{{route('products.home')}}">Giới thiệu sách</a>
                         </li>
 
 

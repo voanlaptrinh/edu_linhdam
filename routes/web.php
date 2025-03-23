@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Users\HomeController;
 use App\Http\Controllers\Users\IntroductionController;
+use App\Http\Controllers\Users\ProductsController;
 use App\Http\Controllers\Users\TeachersController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,8 @@ Route::get('/introduction', [IntroductionController::class, 'index'])->name('int
 Route::prefix('/teachers')->group(function () {
     Route::get('/', [TeachersController::class, 'index'])->name('teachers.home');
     Route::get('/{alias}', [TeachersController::class, 'detail'])->name('teachers.detail.home');
+});
+Route::prefix('/products')->group(function () {
+    Route::get('/', [ProductsController::class, 'index'])->name('products.home');
+    Route::get('/{alias}', [ProductsController::class, 'detail'])->name('products.detail.home');
 });
