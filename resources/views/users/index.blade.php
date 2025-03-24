@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('/source/users/css/style.css') }}">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="{{ asset('/source/admin/js/jquery-3.3.1.js') }}"></script>
 
 </head>
 

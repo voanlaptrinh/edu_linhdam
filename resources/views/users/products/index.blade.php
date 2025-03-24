@@ -39,69 +39,39 @@
     <section class="bd-shop-area section-space">
         <div class="container">
             <div class="row gy-30">
-                <div class="col-xxl-12 col-xl-12 col-lg-12">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 position-relative">
                     <div class="bd-sorting-meta d-flex-between flex-wrap mb-30 gap-30">
-                        <div class="bd-top-sorting-left">
-                            <h6 class="bd-sorting-item-found">We found <span>9</span> books available for you</h6>
-                        </div>
+                       
                         <div class="bd-top-sorting-right d-flex align-items-center gap-15">
-                           <input type="text" value="" placeholder="Nhập từ tìm kiếm" class="form-control input-search-books">
+                            <form method="GET" action="{{ route('products.home') }}">
+                                <div class="row g-5">
+                                    <!-- Ô tìm kiếm -->
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <input class="form-control" name="search" type="search"
+                                            placeholder="Tìm kiếm tên sản phẩm" value="{{ request()->input('search') }}"
+                                            aria-label="Search">
+                                    </div>
+                                    
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- product grid style -->
                     <div class="display-layout-grid active">
-                        <div class="row gy-30">
-                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                                <div class="bd-product-card-wrap">
-                                    <a href="shop-details.html" class="bd-product-card">
-                                        <div class="bd-product-thumb">
-                                            <img src="https://html.topylo.com/istudy-prv/assets/images/book/book-cover-1.webp"
-                                                alt="The Butcher Game by Alaina Urquhart">
-                                        </div>
-                                        <div class="bd-product-content">
-                                            <h6 class="bd-product-title underline mb-10">The Butcher Game
-                                            </h6>
-                                            <span
-                                                class="bd-product-rating fs-14 d-flex justify-content-center rating-color mb-10">
-                                               <i class="fas fa-star"></i>
-                                               <i class="fas fa-star"></i>
-                                               <i class="fas fa-star"></i>
-                                               <i class="fas fa-star"></i>
-                                               <i class="fas fa-star"></i>
-                                            </span>
-                                            <div class="bd-product-price">
-                                                <span class="current-price">$19.99</span>
-                                            </div>
-                                        </div>
-                                        <div class="bd-product-cart-btn">
-                                            <div class="bd-btn btn-primary btn-small">Add
-                                                To
-                                                Cart</div>
-                                        </div>
-                                    </a>
-                                    <div class="bd-product-details-btn">
-                                        <a href="shop-details.html" class="bd-btn btn-outline-secondary btn-small">View
-                                            Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
+                        <div class="row gy-30" id="product-body">
+                            @include('users.products.table') <!-- Load sản phẩm từ view -->
+                         
                            
                            
                         </div>
                     </div>
-                  
+                    <div id="loading">
+                        <span class="spinner-border text-primary" role="status"></span>
+                        <span>Đang tải dữ liệu...</span>
+                    </div>
                     <!-- pagination style -->
-                    <div class="basic-pagination">
-                        <nav>
-                            <ul>
-                                <li><a href="#" class="prev"><i class="fa-solid fa-angle-left"></i></a></li>
-                                <li><a class="current">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#" class="next"><i class="fa-solid fa-angle-right"></i></a></li>
-                            </ul>
-                        </nav>
+                    <div id="pagination-wrapper" class="d-flex justify-content-end p-3">
+                        {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
                     </div>
                     <!-- pagination style end -->
                 </div>
@@ -109,4 +79,54 @@
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function() {
+            $(document).on("click", "#pagination-wrapper a", function(e) {
+                e.preventDefault();
+                var page = $(this).attr("href").split("page=")[1];
+                var search = $("input[name='search']").val(); // Lấy giá trị ô tìm kiếm
+                getProducts(page, search);
+            });
+
+            function getProducts(page, search) {
+                $.ajax({
+                        type: "GET",
+                        url: '?page=' + page + '&search=' + encodeURIComponent(search),
+                        dataType: "json",
+                        beforeSend: function() {
+                            $("#loading").show();
+                            $("#product-body").css("opacity", "0.5");
+                            $("#pagination-wrapper").hide();
+                        }
+                    })
+                    .done(function(data) {
+                        if (data.table && data.pagination) {
+                            $("#product-body").html(data.table);
+                            $("#pagination-wrapper").html(data.pagination);
+
+                            // Gán lại sự kiện click vào nút phân trang
+                            $("#pagination-wrapper a").off("click").on("click", function(e) {
+                                e.preventDefault();
+                                var page = $(this).attr('href').split('page=')[1];
+                                var search = $("input[name='search']").val();
+                                getProducts(page, search);
+                            });
+
+                            window.history.pushState({}, "", '?page=' + page + '&search=' + encodeURIComponent(
+                                search));
+                        } else {
+                            alert("Lỗi: Không thể tải dữ liệu!");
+                        }
+                    })
+                    .fail(function() {
+                        alert("Lỗi tải dữ liệu, vui lòng thử lại!");
+                    })
+                    .always(function() {
+                        $("#loading").hide();
+                        $("#product-body").css("opacity", "1");
+                        $("#pagination-wrapper").show();
+                    });
+            }
+        });
+    </script>
 @endsection
