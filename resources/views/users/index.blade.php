@@ -56,7 +56,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tin tức</a>
+                            <a class="nav-link" href="{{route('news.home')}}">Tin tức</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Liên hệ</a>

@@ -2,8 +2,8 @@
 @section('content')
     <section class="bd-breadcrumb-area p-relative fix z-index-11">
         <div class="bd-breadcrumb-bg-two"
-            data-background="https://html.topylo.com/istudy-prv/assets/images/breadcrumb/breadcrumb-bg-2.webp"
-            style="background-image: url(&quot;https://html.topylo.com/istudy-prv/assets/images/breadcrumb/breadcrumb-bg-2.webp&quot;);">
+            data-background="{{asset('source/images/breadcrumb-bg-2.webp')}}"
+            style="background-image: url(&quot;{{asset('source/images/breadcrumb-bg-2.webp')}}&quot;);">
         </div>
         <div class="bd-breadcrumb-wrapper p-relative">
             <div class="container">
@@ -24,9 +24,9 @@
                 </div>
                 <div class="bd-breadcrumb-shape">
                     <div class="shape-1"><img
-                            src="https://html.topylo.com/istudy-prv/assets/images/shape/breadcrumb-shape-1.webp"
+                            src="{{asset('source/images/breadcrumb-shape-1.webp')}}"
                             alt="shape"></div>
-                    <div class="shape-3"><img src="https://html.topylo.com/istudy-prv/assets/images/shape/bulb-shape.webp"
+                    <div class="shape-3"><img src="{{asset('source/images/bulb-shape.webp')}}"
                             alt="shape"></div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        {{-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                             <div class="bd-instructor-wrapper style-four">
                                 <div class="bd-instructor-item">
                                     <div class="bd-instructor-thumb-wrapper">
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     @endforeach
 
 
