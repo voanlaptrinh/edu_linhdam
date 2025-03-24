@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Users\ContactController;
+use App\Http\Controllers\Users\CoursesController;
 use App\Http\Controllers\Users\HomeController;
 use App\Http\Controllers\Users\IntroductionController;
 use App\Http\Controllers\Users\NewsController;
@@ -32,4 +34,12 @@ Route::prefix('/products')->group(function () {
 Route::prefix('/news')->group(function () {
     Route::get('/', [NewsController::class, 'index'])->name('news.home');
     Route::get('/{alias}', [NewsController::class, 'detail'])->name('news.detail.home');
+});
+Route::prefix('/contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('contact.home');
+    Route::post('/', [ContactController::class, 'store'])->name('contact.store.home');
+});
+Route::prefix('/courses')->group(function () {
+    Route::get('/', [CoursesController::class, 'index'])->name('courses.home');
+    Route::get('/{alias}', [CoursesController::class, 'detail'])->name('courses.detail.home');
 });

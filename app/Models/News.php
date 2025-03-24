@@ -13,6 +13,7 @@ class News extends Model
         'description',
         'content',
         'alias',
+        'views',
         'tag',
         'image',
         'metatitle',

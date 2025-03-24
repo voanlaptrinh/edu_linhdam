@@ -11,7 +11,7 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="{{ asset('/source/admin/js/jquery-3.3.1.js') }}"></script>
-
+    <link rel="stylesheet" href="{{ asset('/source/admin/css/toastr.min.css') }}">
 </head>
 
 <body>
@@ -39,9 +39,11 @@
                                 Môn học <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Toán lớp 1</a></li>
-                                <li><a class="dropdown-item" href="#">Vật lý lớp 2</a></li>
-                                <li><a class="dropdown-item" href="#">Hóa học lớp 3</a></li>
+                                @foreach (get_course() as $course)
+                                    <li><a class="dropdown-item" href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{ $course->name }}</a></li>
+                                    
+                                @endforeach
+                               
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -59,14 +61,14 @@
                             <a class="nav-link" href="{{route('news.home')}}">Tin tức</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Liên hệ</a>
+                            <a class="nav-link" href="{{route('contact.home')}}">Liên hệ</a>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
- 
+       
 
     <!-- Sidebar Mobile -->
     <div class="sidebar" id="mobileSidebar">
@@ -81,6 +83,7 @@
             </div>
         </div>
         <hr>
+      
         <div class="menu-item">
             <a href="mon-hoc.html">
                 <span>Môn học</span>
@@ -226,6 +229,32 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('/source/admin/js/toastr.min.js') }}"></script>
+    <script>
+        toastr.options = {
+
+            "progressBar": true, // Hiển thị thanh tiến trình
+            "timeOut": 2000, // Thời gian hiển thị thông báo (2 giây)
+            "extendedTimeOut": 1000, // Thời gian hiển thị khi người dùng di chuột vào thông báo (1 giây)
+
+        };
+
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+
+        @if (Session::has('warning'))
+            toastr.warning("{{ Session::get('warning') }}");
+        @endif
+    </script>
     <script>
         document.getElementById("sidebarToggle").addEventListener("click", function() {
             document.getElementById("mobileSidebar").classList.add("active");

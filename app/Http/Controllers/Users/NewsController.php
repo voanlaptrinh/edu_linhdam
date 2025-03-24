@@ -16,7 +16,12 @@ class NewsController extends Controller
     public function detail($alias)
     {
         $news = News::where('alias', $alias)->firstOrFail();
+        $newsLatest = News::where('id', '!=', $news->id)
+        ->orderBy('created_at', 'desc')
+        ->limit(3)
+        ->get();
+        $news->increment('views');
         $tags = $news->tag;
-        return view('users.news.detail', compact('news', 'tags'));
+        return view('users.news.detail', compact('news', 'tags','newsLatest'));
     }
 }

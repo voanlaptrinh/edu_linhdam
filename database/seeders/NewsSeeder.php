@@ -45,5 +45,35 @@ class NewsSeeder extends Seeder
                 'alias' => Str::slug($name . '-' . $id)
             ]);
         }
+        $courseItems = [
+            'Tin môn học 1',
+            'Tin môn học 2',
+            'Tin môn học 3',
+            'Tin môn học 4',
+            'Tin môn học 5',
+            'Tin môn học 6',
+            'Tin môn học 7',
+            'Tin môn học 8',
+            'Tin môn học 9',
+        ];
+
+        foreach ($courseItems as $key => $name) {
+            $id = DB::table('courses')->insertGetId([
+                'name' => $name,
+                'description' => 'Mô tả ngắn cho ' . $name,
+                'content' => '<p>Nội dung chi tiết của ' . $name . '.</p>',
+                'alias' => '',
+                'image' =>'',
+                'metatitle' => 'Meta title cho ' . $name,
+                'metadescription' => 'Meta description cho ' . $name,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            // Cập nhật alias có chứa ID
+            DB::table('courses')->where('id', $id)->update([
+                'alias' => Str::slug($name . '-' . $id)
+            ]);
+        }
     }
 }
