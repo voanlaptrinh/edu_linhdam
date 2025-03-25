@@ -37,7 +37,7 @@
             <div class="row gy-30 justify-content-center">
                 <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6 col-8">
                     <div class="bd-product-details-thumb sidebar-sticky">
-                        <img src="https://html.topylo.com/istudy-prv/assets/images/book/book-cover-2.webp" alt="hardcover">
+                        <img src="{{ asset($product->image ?: '/source/images/book-cover-2.webp') }}" alt="hardcover">
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-12">

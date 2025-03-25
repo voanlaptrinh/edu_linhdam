@@ -35,7 +35,7 @@
                             <a class="nav-link" href="{{route('introduction.home')}}">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" id="menuDropdown">
+                            <a href="{{route('courses.home')}}" class="nav-link" id="menuDropdown">
                                 Môn học <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu">

@@ -646,7 +646,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4p;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
@@ -2020,4 +2020,29 @@ ul {
 }
 #toast-container{
     box-shadow: 3px 5px 4px 1px black;
+}
+.bd-course-wrapper.style-four {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.bd-course-wrapper.style-four .bd-course-thumb {
+    overflow: hidden;
+    transition: all 0.3s ease-out 0s;
+    border-radius: 24px;
+    position: relative;
+    width: 100%;
+}
+.bd-course-wrapper.style-four .bd-course-thumb img {
+    width: 100%;
+    transition: all 0.3s ease-out 0s;
+    height: 100%;
+    object-fit: cover;
+}
+.bd-course-wrapper.style-four .shape {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
 }

@@ -6,7 +6,7 @@
             <div class="bd-product-card-wrap">
                 <a href="{{route('products.detail.home', ['alias'=> $product->alias])}}" class="bd-product-card">
                     <div class="bd-product-thumb">
-                        <img src="https://html.topylo.com/istudy-prv/assets/images/book/book-cover-1.webp"
+                        <img src="{{ asset($product->image ?: '/source/images/book-cover-2.webp') }}"
                             alt="{{$product->title}}">
                     </div>
                     <div class="bd-product-content">

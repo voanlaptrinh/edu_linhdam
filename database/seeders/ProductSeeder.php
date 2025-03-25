@@ -49,7 +49,7 @@ class ProductSeeder extends Seeder
                     'release_date' => now()->subDays(rand(0, 1000)),
                     'quantity' => rand(5, 100),
                     // 'category_id' => $categoryId,
-                    'cover_image' => '/source/images/products/product-img-' . $key + 1 . '.jpg',
+                    'cover_image' => '/source/images/book-cover-2.webp',
                     // 'images' => null,
                     'tags' => null,
                     'views' => rand(100, 10000),

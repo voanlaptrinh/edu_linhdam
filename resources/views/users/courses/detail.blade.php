@@ -15,7 +15,7 @@
                                     <span><i class="fas fa-home"></i> <a
                                             href="{{ route('home') }}">{{ get_config()->title }}</a></span>
                                     <span class="divider"><i class="fas fa-chevron-right"></i></span>
-                                    <span class="active">Tin tức</span>
+                                    <span class="active">Tin môn học</span>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,8 @@
                                     <div class="bd-recent-post-item">
                                         <div class="bd-recent-post-thumb">
                                             <a href="{{ route('news.detail.home', ['alias' => $newsLatest->alias]) }}"><img
-                                                    src="{{ asset($newsLatest->image) }}" alt="image"></a>
+                                                    src="{{ asset($newsLatest->image ?: '/source/images/home-program-1.webp') }}"
+                                                    alt="image"></a>
                                         </div>
                                         <div class="bd-recent-post-content">
                                             <div class="bd-recent-post-meta">
@@ -77,22 +78,11 @@
                                                 href="{{ route('courses.detail.home', ['alias' => $itemCource->alias]) }}">{{ $itemCource->name }}</a>
                                         </li>
                                     @endforeach
+
                                 </ul>
                             </div>
                         </div>
-                        <div class="bd-blog-widget widget_tag_cloud">
-                            <h5 class="bd-widget-title mb-20">Tags</h5>
-                            <div class="tagcloud">
-                                @if (!empty($itemNews->tag))
-                                    @foreach ($itemNews->tag as $item)
-                                        <a>{{ $item['value'] }}</a>
-                                    @endforeach
-                                @else
-                                    <span class="text-muted">Không có tag</span>
-                                @endif
 
-                            </div>
-                        </div>
 
                     </div>
                 </div>
