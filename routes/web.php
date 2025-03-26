@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Users\ContactController;
 use App\Http\Controllers\Users\CoursesController;
 use App\Http\Controllers\Users\HomeController;
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [HomeController::class, 'profile'])->name('home.profile');
 Route::get('/introduction', [IntroductionController::class, 'index'])->name('introduction.home');
 Route::post('/storeEmail', [HomeController::class, 'store'])->name('store.email.home');
 Route::prefix('/teachers')->group(function () {
@@ -44,3 +46,7 @@ Route::prefix('/courses')->group(function () {
     Route::get('/', [CoursesController::class, 'index'])->name('courses.home');
     Route::get('/{alias}', [CoursesController::class, 'detail'])->name('courses.detail.home');
 });
+
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

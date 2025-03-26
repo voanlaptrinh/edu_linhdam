@@ -44,4 +44,7 @@ class HomeController extends Controller
         // Chuyển hướng với thông báo thành công
         return redirect()->back()->with('success', 'Gửi liên hệ thành công!');
     }
+    public function profile(){
+        return view('users.auth.profile');
+    }
 }

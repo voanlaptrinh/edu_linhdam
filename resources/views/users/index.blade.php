@@ -17,41 +17,58 @@
 <body>
     <div class="bd-header-top">
         <div class="bd-header-top-left">
-            
+
         </div>
         <div class="bd-header-top-right text-md-end">
-            <div>
-                <ul class="list-unstyled d-flex align-items-center mb-0 ms-5 ms-lg-0">
+            <div class="btn-sig-regis">
+                @if (Auth::user())
+                    <ul class="list-unstyled d-flex align-items-center mb-0 ms-5 ms-lg-0">
 
-                    <li class="dropdown ms-4">
-                        <a href="#"  type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="http://localhost:8080/source/images/avatar/avatar-1.jpg" alt="" class="avatar avatar-md rounded-circle">
-                        </a>
-                        
+                        <li class="dropdown ms-4">
+                            <a href="#" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ asset(Auth::user()->image ?: '/source/images/newsletter-thumb-02.webp') }}" alt=""
+                                    class="avatar avatar-md rounded-circle">
+                                   {{Auth::user()->username}}
+                            </a>
 
-                        <div class="dropdown-menu dropdown-menu-end p-0">
-                            <div class="lh-1 px-5 py-4 border-bottom">
-                                <h5 class="mb-1 h6"></h5>
-                                <small></small>
 
+                            <div class="dropdown-menu dropdown-menu-end p-0">
+                                <div class="lh-1 px-3 py-4 border-bottom">
+                                    <h5 class="mb-1 h6">{{Auth::user()->name}}</h5>
+                                    <small>{{ Auth::user()->email }}</small>
+
+                                </div>
+
+                                <ul class="list-unstyled px-2 py-3">
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('home')}}">Trang chủ</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="{{route('home.profile')}}">Profile</a>
+                                    </li>
+
+
+                                </ul>
+                                <div class="border-top px-3 py-3">
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn">Đăng xuất</button>
+                                    </form>
+                                </div>
                             </div>
+                        </li>
+                    </ul>
+                @else
+                    <div>
+                        <a href="{{ route('login') }}">Đăng nhập</a>
+                    </div>
+                    <div>
+                        <a href="">Đăng ký</a>
+                    </div>
+                @endif
 
-                            <ul class="list-unstyled px-2 py-3">
-                                <li>
-                                    <a class="dropdown-item" href="#!">Home</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="http://localhost:8080/admin/accout-admin">Profile</a>
-                                </li>
-
-
-                            </ul>
-                            <div class="border-top px-5 py-3">
-                                <a href="#" class="text-dark">Log Out</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
@@ -124,7 +141,7 @@
         </div>
         <hr>
         <a href="{{ route('home') }}">Trang chủ</a>
-        <a  href="{{ route('introduction.home') }}">Giới thiệu</a>
+        <a href="{{ route('introduction.home') }}">Giới thiệu</a>
         <div class="menu-item">
             <a href="{{ route('courses.home') }}">
                 <span>Môn học</span>
@@ -132,9 +149,9 @@
             </a>
             <div class="submenu">
                 @foreach (get_course() as $course)
-                <a href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{$course->name}}</a>
+                    <a href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{ $course->name }}</a>
                 @endforeach
-              
+
             </div>
         </div>
         <a class="" href="{{ route('teachers.home') }}">Giảng viên</a>
@@ -142,7 +159,7 @@
         <a class="" href="{{ route('products.home') }}">Giới thiệu sách</a>
         <a class="" href="{{ route('news.home') }}">Tin tức</a>
         <a class="" href="{{ route('contact.home') }}">Liên hệ</a>
-       
+
     </div>
     <div class="overlay" id="sidebarOverlay"></div>
 
@@ -164,20 +181,20 @@
                                             height="80">
                                     </a>
                                 </div>
-                                <p class="bd-footer-widget-description">{{get_config()->description}}</p>
+                                <p class="bd-footer-widget-description">{{ get_config()->description }}</p>
                                 <div class="bd-footer-widget-contact-info">
                                     <div class="bd-footer-widget-contact-item">
                                         <span>Điện thoại:</span>
-                                        <a href="tell:{{get_config()->phone}}">
-                                            {{get_config()->phone}}</a>
+                                        <a href="tell:{{ get_config()->phone }}">
+                                            {{ get_config()->phone }}</a>
                                     </div>
                                     <div class="bd-footer-widget-contact-item">
                                         <span>Email:</span>
-                                        <a href="mailto:{{get_config()->email}}"> {{get_config()->email}}</a>
+                                        <a href="mailto:{{ get_config()->email }}"> {{ get_config()->email }}</a>
                                     </div>
                                     <div class="bd-footer-widget-contact-item">
                                         <span>Địa chỉ:</span>
-                                        <a href="#"> {{get_config()->address}}</a>
+                                        <a href="#"> {{ get_config()->address }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +267,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="bd-footer-copyright text-center">
-                            <p class="underline">© Copyright <span id="year">{{now()->year}}</span> {{get_config()->title}}</p>
+                            <p class="underline">© Copyright <span id="year">{{ now()->year }}</span>
+                                {{ get_config()->title }}</p>
                         </div>
                     </div>
                 </div>
@@ -274,8 +292,8 @@
     <script>
         toastr.options = {
 
-            "progressBar": true, 
-            "timeOut": 2000, 
+            "progressBar": true,
+            "timeOut": 2000,
             "extendedTimeOut": 1000,
 
         };
