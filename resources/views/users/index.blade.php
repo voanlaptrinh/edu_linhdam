@@ -15,7 +15,46 @@
 </head>
 
 <body>
+    <div class="bd-header-top">
+        <div class="bd-header-top-left">
+            
+        </div>
+        <div class="bd-header-top-right text-md-end">
+            <div>
+                <ul class="list-unstyled d-flex align-items-center mb-0 ms-5 ms-lg-0">
 
+                    <li class="dropdown ms-4">
+                        <a href="#"  type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="http://localhost:8080/source/images/avatar/avatar-1.jpg" alt="" class="avatar avatar-md rounded-circle">
+                        </a>
+                        
+
+                        <div class="dropdown-menu dropdown-menu-end p-0">
+                            <div class="lh-1 px-5 py-4 border-bottom">
+                                <h5 class="mb-1 h6"></h5>
+                                <small></small>
+
+                            </div>
+
+                            <ul class="list-unstyled px-2 py-3">
+                                <li>
+                                    <a class="dropdown-item" href="#!">Home</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="http://localhost:8080/admin/accout-admin">Profile</a>
+                                </li>
+
+
+                            </ul>
+                            <div class="border-top px-5 py-3">
+                                <a href="#" class="text-dark">Log Out</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-dark navbar-expand-lg" id="header-sticky">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
@@ -84,7 +123,7 @@
             </div>
         </div>
         <hr>
-        <a href="#">Trang chủ</a>
+        <a href="{{ route('home') }}">Trang chủ</a>
         <a  href="{{ route('introduction.home') }}">Giới thiệu</a>
         <div class="menu-item">
             <a href="{{ route('courses.home') }}">
@@ -125,21 +164,20 @@
                                             height="80">
                                     </a>
                                 </div>
-                                <p class="bd-footer-widget-description">Education focused website or template is an
-                                    essential part that provides visitors with insights into the program. </p>
+                                <p class="bd-footer-widget-description">{{get_config()->description}}</p>
                                 <div class="bd-footer-widget-contact-info">
                                     <div class="bd-footer-widget-contact-item">
-                                        <span>Phone:</span>
-                                        <a href="tell:123456789">
-                                            +123-4567-8900</a>
+                                        <span>Điện thoại:</span>
+                                        <a href="tell:{{get_config()->phone}}">
+                                            {{get_config()->phone}}</a>
                                     </div>
                                     <div class="bd-footer-widget-contact-item">
                                         <span>Email:</span>
-                                        <a href="mailto:istudy@mail.com"> istudy@mail.com</a>
+                                        <a href="mailto:{{get_config()->email}}"> {{get_config()->email}}</a>
                                     </div>
                                     <div class="bd-footer-widget-contact-item">
-                                        <span>Address:</span>
-                                        <a href="#"> 27 Division St, New York</a>
+                                        <span>Địa chỉ:</span>
+                                        <a href="#"> {{get_config()->address}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +250,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="bd-footer-copyright text-center">
-                            <p class="underline">© Copyright <span id="year">{{now()->year}}</span> Developed By iStudy</p>
+                            <p class="underline">© Copyright <span id="year">{{now()->year}}</span> {{get_config()->title}}</p>
                         </div>
                     </div>
                 </div>
