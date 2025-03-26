@@ -15,60 +15,61 @@
 </head>
 
 <body>
-    
-        <nav class="navbar navbar-dark navbar-expand-lg" id="header-sticky">
-            <div class="container">
-                <a class="navbar-brand" href="{{route('home')}}">
-                    <img src="{{ asset(get_config()->logo) }}" alt="" width="70px" height="70px"
-                        style="border-radius: 10%">
-                    {{ get_config()->name }}
-                </a>
-                <button class="navbar-toggler d-lg-none" id="sidebarToggle">
-                    <i class="fas fa-bars text-white"></i>
-                </button>
-                <div class="collapse navbar-collapse d-none d-lg-block">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('home')}}">Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('introduction.home')}}">Giới thiệu</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="{{route('courses.home')}}" class="nav-link" id="menuDropdown">
-                                Môn học <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                @foreach (get_course() as $course)
-                                    <li><a class="dropdown-item" href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{ $course->name }}</a></li>
-                                    
-                                @endforeach
-                               
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('teachers.home')}}">Giảng viên</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cảm nhận</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('products.home')}}">Giới thiệu sách</a>
-                        </li>
+
+    <nav class="navbar navbar-dark navbar-expand-lg" id="header-sticky">
+        <div class="container">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ asset(get_config()->logo) }}" alt="" width="70px" height="70px"
+                    style="border-radius: 10%">
+                {{ get_config()->name }}
+            </a>
+            <button class="navbar-toggler d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('introduction.home') }}">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="{{ route('courses.home') }}" class="nav-link" id="menuDropdown">
+                            Môn học <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (get_course() as $course)
+                                <li><a class="dropdown-item"
+                                        href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{ $course->name }}</a>
+                                </li>
+                            @endforeach
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('teachers.home') }}">Giảng viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cảm nhận</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('products.home') }}">Giới thiệu sách</a>
+                    </li>
 
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('news.home')}}">Tin tức</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('contact.home')}}">Liên hệ</a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('news.home') }}">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact.home') }}">Liên hệ</a>
+                    </li>
+                </ul>
 
-                </div>
             </div>
-        </nav>
-       
+        </div>
+    </nav>
+
 
     <!-- Sidebar Mobile -->
     <div class="sidebar" id="mobileSidebar">
@@ -83,24 +84,26 @@
             </div>
         </div>
         <hr>
-      
+        <a href="#">Trang chủ</a>
+        <a  href="{{ route('introduction.home') }}">Giới thiệu</a>
         <div class="menu-item">
-            <a href="mon-hoc.html">
+            <a href="{{ route('courses.home') }}">
                 <span>Môn học</span>
                 <i class="fas fa-chevron-down toggle"></i>
             </a>
             <div class="submenu">
-                <a href="#">Toán</a>
-                <a href="#">Vật lý</a>
-                <a href="#">Hóa học</a>
+                @foreach (get_course() as $course)
+                <a href="{{ route('courses.detail.home', ['alias' => $course->alias]) }}">{{$course->name}}</a>
+                @endforeach
+              
             </div>
         </div>
-
-
-        <a href="#">Tin tức</a>
-        <hr>
-        <a href="#">Đăng nhập</a>
-        <a href="#">Đăng ký</a>
+        <a class="" href="{{ route('teachers.home') }}">Giảng viên</a>
+        <a class="" href="#">Cảm nhận</a>
+        <a class="" href="{{ route('products.home') }}">Giới thiệu sách</a>
+        <a class="" href="{{ route('news.home') }}">Tin tức</a>
+        <a class="" href="{{ route('contact.home') }}">Liên hệ</a>
+       
     </div>
     <div class="overlay" id="sidebarOverlay"></div>
 
@@ -209,7 +212,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="bd-footer-copyright text-center">
-                            <p class="underline">© Copyright <span id="year">2025</span> Developed By iStudy</p>
+                            <p class="underline">© Copyright <span id="year">{{now()->year}}</span> Developed By iStudy</p>
                         </div>
                     </div>
                 </div>
@@ -233,9 +236,9 @@
     <script>
         toastr.options = {
 
-            "progressBar": true, // Hiển thị thanh tiến trình
-            "timeOut": 2000, // Thời gian hiển thị thông báo (2 giây)
-            "extendedTimeOut": 1000, // Thời gian hiển thị khi người dùng di chuột vào thông báo (1 giây)
+            "progressBar": true, 
+            "timeOut": 2000, 
+            "extendedTimeOut": 1000,
 
         };
 
@@ -255,129 +258,7 @@
             toastr.warning("{{ Session::get('warning') }}");
         @endif
     </script>
-    <script>
-        document.getElementById("sidebarToggle").addEventListener("click", function() {
-            document.getElementById("mobileSidebar").classList.add("active");
-            document.getElementById("sidebarOverlay").classList.add("active");
-        });
-
-        document.getElementById("closeSidebar").addEventListener("click", function() {
-            document.getElementById("mobileSidebar").classList.remove("active");
-            document.getElementById("sidebarOverlay").classList.remove("active");
-        });
-
-        document.getElementById("sidebarOverlay").addEventListener("click", function() {
-            document.getElementById("mobileSidebar").classList.remove("active");
-            document.getElementById("sidebarOverlay").classList.remove("active");
-        });
-
-        document.querySelectorAll(".toggle").forEach(icon => {
-            icon.addEventListener("click", function(event) {
-                let submenu = this.parentElement.nextElementSibling; // Lấy submenu
-
-                // Đảo trạng thái dropdown
-                if (submenu) {
-                    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-                }
-
-                // Đổi icon
-                this.classList.toggle("fa-chevron-down");
-                this.classList.toggle("fa-chevron-up");
-
-                event.stopPropagation(); // Ngăn chặn sự kiện lan lên thẻ <a>
-                event.preventDefault(); // Ngăn trình duyệt không nhảy link khi nhấn icon
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-    let header = document.getElementById("header-sticky");
-
-    if (header) {
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 0) {
-                header.classList.add("bd-sticky");
-            } else {
-                header.classList.remove("bd-sticky");
-            }
-        });
-    }
-});
-
-
-        document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-            let timer;
-            item.addEventListener('mouseenter', function() {
-                clearTimeout(timer);
-                this.querySelector('.dropdown-menu').style.display = 'block';
-            });
-            item.addEventListener('mouseleave', function() {
-                timer = setTimeout(() => {
-                    this.querySelector('.dropdown-menu').style.display = 'none';
-                }, 500); // Delay 300ms trước khi đóng
-            });
-        });
-    </script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true, // Lặp vô hạn
-            autoplay: {
-                delay: 3000, // Chuyển slide sau 3 giây
-                disableOnInteraction: false, // Không dừng khi thao tác
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-        var swiper2 = new Swiper(".mySwiper2", {
-            loop: false, // Lặp vô hạn
-            autoplay: {
-                delay: 3000, // Chuyển slide sau 3 giây
-                disableOnInteraction: false, // Không dừng khi thao tác
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-        var swiper = new Swiper(".mySwiperNews", {
-            loop: true, // Chạy lặp vô hạn
-            autoplay: {
-                delay: 3000, // Chuyển slide sau 3 giây
-                disableOnInteraction: false, // Không dừng khi thao tác
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                }, // Mobile: 1 slide
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                }, // Tablet: 2 slides
-                992: {
-                    slidesPerView: 4,
-                    spaceBetween: 30
-                } // PC: 4 slides
-            }
-        });
-    </script>
+    <script src="{{ asset('/source/users/js/style.js') }}"></script>
 </body>
 
 </html>

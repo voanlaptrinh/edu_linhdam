@@ -16,12 +16,12 @@ class BannerSeeder extends Seeder
         Banner::create([
             'name' => 'SuperMarket For Fresh Grocery',
             'description' => 'Introduced a new model for online grocery shopping and convenient home delivery.',
-            'image' => '/source/images/slider/slide-1.jpg'
+            'image' => '/source/images/slide-1.jpg'
         ]);
         Banner::create([
             'name' => 'SuperMarket For Fresh Grocery',
             'description' => 'Introduced a new model for online grocery shopping and convenient home delivery.',
-            'image' => '/source/images/slider/slider-2.jpg'
+            'image' => '/source/images/slide-2.jpg'
         ]);
     }
 }

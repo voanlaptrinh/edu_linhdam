@@ -44,7 +44,7 @@
                                 <div class="bd-instructor-item">
                                     <div class="bd-instructor-thumb-wrapper">
                                         <div class="bd-instructor-thumb">
-                                            <a href="#"><img src="{{ asset($teacher->avatar) }}" class="imgea-teacher"
+                                            <a href="#"><img src="{{ asset($teacher->avatar ?: '/source/images/instructor-thumb-05.webp') }}" class="imgea-teacher"
                                                     alt="image"></a>
                                         </div>
 
@@ -58,24 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="bd-instructor-wrapper style-four">
-                                <div class="bd-instructor-item">
-                                    <div class="bd-instructor-thumb-wrapper">
-                                        <div class="bd-instructor-thumb">
-                                            <a href="#"><img
-                                                    src="https://html.topylo.com/istudy-prv/assets/images/instructor/instructor-thumb-18.webp"
-                                                    alt="image"></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="bd-instructor-info mt-15">
-                                        <h6 class="name underline"><a href="instructor-details.html">Dr. John Smith</a></h6>
-                                        <span>Math Instructor</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+                       
                     @endforeach
 
 

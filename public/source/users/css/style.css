@@ -994,7 +994,9 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .img-accoute {
-    max-width: 100%;
+    height: 300px;
+    width: 100%;
+    /* max-width: 100%; */
     object-fit: cover;
 }
 
@@ -1518,8 +1520,8 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .bd-instructor-wrapper.style-four .bd-instructor-thumb-wrapper .bd-instructor-thumb a img {
-    width: 100%;
-    height: 100%;
+    width: 276px;
+    height: 276px;
     border-radius: 100%;
 }
 

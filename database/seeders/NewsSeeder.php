@@ -33,7 +33,7 @@ class NewsSeeder extends Seeder
                 'content' => '<p>Nội dung chi tiết của ' . $name . '.</p>',
                 'alias' => '',
                 'tag' => null,
-                'image' =>'source/images/blog/blog-img-' . $key+1 . '.jpg',
+                'image' =>'',
                 'metatitle' => 'Meta title cho ' . $name,
                 'metadescription' => 'Meta description cho ' . $name,
                 'created_at' => now(),
@@ -60,7 +60,7 @@ class NewsSeeder extends Seeder
         foreach ($courseItems as $key => $name) {
             $id = DB::table('courses')->insertGetId([
                 'name' => $name,
-                'description' => 'Mô tả ngắn cho ' . $name,
+                'description' => 'Mô tả ngắn cho Mô tả ngắn cho Mô tả ngắn cho Mô tả ngắn cho Mô tả ngắn cho Mô tả ngắn cho Mô tả ngắn cho ' . $name,
                 'content' => '<p>Nội dung chi tiết của ' . $name . '.</p>',
                 'alias' => '',
                 'image' =>'',
@@ -72,6 +72,35 @@ class NewsSeeder extends Seeder
 
             // Cập nhật alias có chứa ID
             DB::table('courses')->where('id', $id)->update([
+                'alias' => Str::slug($name . '-' . $id)
+            ]);
+        }
+
+
+        $teacherItem = [
+            'Nguyễn văn A',
+            'Nguyễn văn B',
+            'Nguyễn văn C',
+            'Nguyễn văn D',
+            'Nguyễn văn F',
+        ];
+        foreach ($teacherItem as $key => $name) {
+            $id = DB::table('teachers')->insertGetId([
+                'name' => $name,
+                'email' => 'admin'.$key.'@example.com',
+                'phone' => '0921933797',
+                'subject' => 'toán',
+                'birthday' => now(),
+                'bio' => '<p>Nội dung chi tiết của ' . $name . '.</p>',
+                'alias' => '',
+                'avatar' =>'',
+                'address' =>'Hà nội',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            // Cập nhật alias có chứa ID
+            DB::table('teachers')->where('id', $id)->update([
                 'alias' => Str::slug($name . '-' . $id)
             ]);
         }
