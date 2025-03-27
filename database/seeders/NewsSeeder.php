@@ -104,5 +104,32 @@ class NewsSeeder extends Seeder
                 'alias' => Str::slug($name . '-' . $id)
             ]);
         }
+
+
+
+        $feelingItems = [
+            'Nguyễn văn A',
+            'Nguyễn văn B',
+            'Nguyễn văn C',
+            'Nguyễn văn D',
+            'Nguyễn văn F',
+        ];
+
+        foreach ($feelingItems as $key => $name) {
+            $id = DB::table('feelings')->insertGetId([
+                'title' => $name,
+                'content' => 'My time at iStudy University has been
+                                    life-changing. The courses are well-structured, and the resources
+                                    provided are top-notch. I’ve gained both practical knowledge and
+                                    lifelong friendships here.',
+                'image' =>'',
+                'rating' => '5',
+                'is_approved' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+          
+        }
     }
 }

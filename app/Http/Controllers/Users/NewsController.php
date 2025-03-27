@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,9 @@ class NewsController extends Controller
         ->orderBy('created_at', 'desc')
         ->limit(3)
         ->get();
+        $courses =Course::orderBy('created_at', 'desc')->paginate(6);
         $news->increment('views');
         $tags = $news->tag;
-        return view('users.news.detail', compact('news', 'tags','newsLatest'));
+        return view('users.news.detail', compact('news', 'tags','newsLatest','courses'));
     }
 }

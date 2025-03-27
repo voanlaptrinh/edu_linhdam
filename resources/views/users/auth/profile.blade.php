@@ -15,8 +15,8 @@
                                         src="{{ asset(Auth::user()->image ?: '/source/images/newsletter-thumb-02.webp') }}"
                                         alt="image"></div>
                                 <div class="content">
-                                    <h3 class="name">{{ Auth::user()->name}}</h3>
-                                    <span class="designation d-block">{{ Auth::user()->email}}</span>
+                                    <h3 class="name">{{ Auth::user()->name }}</h3>
+                                    <span class="designation d-block">{{ Auth::user()->email }}</span>
 
                                 </div>
                             </div>
@@ -35,25 +35,26 @@
                         <div class="bd-dashboard-menu">
                             <h6 class="bd-dashboard-menu-title mt-0">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Chào mừng, {{ Auth::user()->username}}</font>
+                                    <font style="vertical-align: inherit;">Chào mừng, {{ Auth::user()->username }}</font>
                                 </font>
                             </h6>
 
 
                             <ul>
                                 <li>
-                                    <a href="student-settings.html"><span><i class="fa-light fa-sliders"></i></span>
+                                    <a href="{{ route('home.profile') }}"><span><i class="fas fa-user-cog"></i></span>
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Cài đặt</font>
                                         </font>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html"><span><i class="fa-light fa-sign-out-alt"></i></span>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Đăng xuất</font>
-                                        </font>
-                                    </a>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn w-100 text-start"
+                                            style="color: #808080;font-size: 16px;font-weight: 500;background: #F5F5F5;">
+                                            <i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -68,87 +69,57 @@
                             </div>
                             <div class="dashboard-profile-info">
                                 <div class="dashboard-profile-inner">
-                                    <div class="row gy-30">
-                                        <div class="d-flex flex-column flex-md-row align-items-center mb-4 file-input-wrapper gap-2">
+                                    <form action="{{ route('home.profile.update') }}" method="POST"
+                                        enctype="multipart/form-data" class="row gy-30">
+                                        @csrf
+                                        <div
+                                            class="d-flex flex-column flex-md-row align-items-center mb-4 file-input-wrapper gap-2">
                                             <div>
-                                                <img id="preview" class="image avatar avatar-lg rounded-3" width="75" height="75"
-                                                    src="{{ asset(Auth::user()->image ?: '/source/images/placeholder-img.jpg') }}" alt="Image">
+                                                <img id="preview" class="image avatar avatar-lg rounded-3" width="75"
+                                                    height="75"
+                                                    src="{{ asset(Auth::user()->image ?: '/source/images/placeholder-img.jpg') }}"
+                                                    alt="Image">
                                             </div>
                                             <div class="file-upload btn btn-light ms-md-4">
-                                                <input type="file" name="image" id="image" class="opacity-0" accept="image/*">
+                                                <input type="file" name="image" id="image" class="opacity-0"
+                                                    accept="image/*">
                                                 Upload Photo
                                             </div>
-                                            <span class="ms-2">JPG, GIF or PNG. 1MB Max.</span>
+                                            <span class="ms-2">JPG, GIF hoặc PNG. 1MB tối đa.</span>
                                         </div>
-                                        
+
+                                        <div class="col-lg-6"><input name="name" class="form-control"
+                                                value="{{ Auth::user()->name }}" placeholder="Tên"></div>
+                                        <div class="col-lg-6"><input name="username" class="form-control"
+                                                value="{{ Auth::user()->username }}" placeholder="Họ tên"></div>
+                                        <div class="col-lg-6"><input name="phone" class="form-control"
+                                                value="{{ Auth::user()->phone }}" placeholder="Số điện thoại"></div>
+                                        <div class="col-lg-6"><input name="address" class="form-control"
+                                                value="{{ Auth::user()->address }}" placeholder="Địa chỉ"></div>
+                                        <div class="col-lg-6"><input name="city" class="form-control"
+                                                value="{{ Auth::user()->city }}" placeholder="Thành phố"></div>
+                                        <div class="col-lg-6"><input name="postal_code" class="form-control"
+                                                value="{{ Auth::user()->postal_code }}" placeholder="Mã bưu chính"></div>
                                         <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="name" class="form-control" id="name"
-                                                    type="text" placeholder="Tên">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="username" class="form-control" id="username"
-                                                    type="text" placeholder="Họ tên">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="phone" class="form-control" id="phone"
-                                                    type="tel" placeholder="Số điện thoại">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="address" class="form-control"
-                                                    id="address" type="text" placeholder="Địa chỉ">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="city" class="form-control"
-                                                    id="city" type="text" placeholder="Thành phố">
-                                            </div>
-                                        </div>
-                                      
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="postal_code" class="form-control" id="postal_code"
-                                                    type="text" placeholder="Mã bưu chính">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                               <select name="gender" class="form-control" id="gender">
+                                            <select name="gender" class="form-control">
                                                 <option value="">--Chọn giới tính--</option>
-                                                <option value="">Nam</option>
-                                                <option value="">Nữ</option>
-                                               </select>
-                                            </div>
+                                                <option value="male"
+                                                    {{ Auth::user()->gender == 'male' ? 'selected' : '' }}>Nam</option>
+                                                <option value="female"
+                                                    {{ Auth::user()->gender == 'female' ? 'selected' : '' }}>Nữ</option>
+                                            </select>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="date_of_birh" class="form-control" id="date_of_birh"
-                                                    type="date" placeholder="Mã bưu chính">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="zalo" class="form-control" id="zalo"
-                                                    type="url" placeholder="Zalo">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input name="facebook" class="form-control" id="facebook"
-                                                    type="url" placeholder="Facebook">
-                                            </div>
-                                        </div>
+                                        <div class="col-lg-6"><input name="date_of_birth" class="form-control"
+                                                type="date" value="{{ Auth::user()->date_of_birth }}"></div>
+                                        <div class="col-lg-6"><input name="zalo" class="form-control" type="url"
+                                                value="{{ Auth::user()->zalo }}" placeholder="Zalo"></div>
+                                        <div class="col-lg-6"><input name="facebook" class="form-control" type="url"
+                                                value="{{ Auth::user()->facebook }}" placeholder="Facebook"></div>
                                         <div class="col-lg-12">
-                                            <button class="bd-btn btn-primary">Save Changes</button>
+                                            <button class="bd-btn btn-primary">Lưu thay đổi</button>
                                         </div>
-                                    </div>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -157,17 +128,5 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('image').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('preview').src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-    </script>
+    
 @endsection

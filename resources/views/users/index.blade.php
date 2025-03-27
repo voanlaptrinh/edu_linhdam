@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Bootstrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('/source/users/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('/source/users/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/source/users/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/source/users/css/swiper-bundle.min.css') }}">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="{{ asset('/source/admin/js/jquery-3.3.1.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('/source/admin/css/toastr.min.css') }}">
 </head>
@@ -27,26 +27,25 @@
                         <li class="dropdown ms-4">
                             <a href="#" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ asset(Auth::user()->image ?: '/source/images/newsletter-thumb-02.webp') }}" alt=""
-                                    class="avatar avatar-md rounded-circle">
-                                   {{Auth::user()->username}}
+                                <img src="{{ asset(Auth::user()->image ?: '/source/images/newsletter-thumb-02.webp') }}"
+                                    alt="" class="avatar avatar-md rounded-circle">
+                                {{ Auth::user()->username }}
                             </a>
 
 
                             <div class="dropdown-menu dropdown-menu-end p-0">
                                 <div class="lh-1 px-3 py-4 border-bottom">
-                                    <h5 class="mb-1 h6">{{Auth::user()->name}}</h5>
+                                    <h5 class="mb-1 h6">{{ Auth::user()->name }}</h5>
                                     <small>{{ Auth::user()->email }}</small>
 
                                 </div>
 
                                 <ul class="list-unstyled px-2 py-3">
                                     <li>
-                                        <a class="dropdown-item" href="{{route('home')}}">Trang chủ</a>
+                                        <a class="dropdown-item" href="{{ route('home') }}">Trang chủ</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item"
-                                            href="{{route('home.profile')}}">Profile</a>
+                                        <a class="dropdown-item" href="{{ route('home.profile') }}">Profile</a>
                                     </li>
 
 
@@ -65,7 +64,7 @@
                         <a href="{{ route('login') }}">Đăng nhập</a>
                     </div>
                     <div>
-                        <a href="">Đăng ký</a>
+                        <a href="{{ route('register') }}">Đăng ký</a>
                     </div>
                 @endif
 
@@ -107,7 +106,7 @@
                         <a class="nav-link" href="{{ route('teachers.home') }}">Giảng viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cảm nhận</a>
+                        <a class="nav-link" href="{{ route('feeling.home') }}">Cảm nhận</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('products.home') }}">Giới thiệu sách</a>
@@ -155,7 +154,7 @@
             </div>
         </div>
         <a class="" href="{{ route('teachers.home') }}">Giảng viên</a>
-        <a class="" href="#">Cảm nhận</a>
+        <a class="" href="{{ route('feeling.home') }}">Cảm nhận</a>
         <a class="" href="{{ route('products.home') }}">Giới thiệu sách</a>
         <a class="" href="{{ route('news.home') }}">Tin tức</a>
         <a class="" href="{{ route('contact.home') }}">Liên hệ</a>
@@ -202,56 +201,60 @@
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="bd-footer-widget footer-1-col-2">
-                            <h6 class="bd-footer-widget-title">Online Platform</h6>
+                            <h6 class="bd-footer-widget-title">Nền tảng</h6>
                             <div class="bd-footer-widget-links list-none">
                                 <ul>
-                                    <li class="underline"><a href="about-university.html">About Us</a></li>
-                                    <li class="underline"><a href="courses-grid-right.html">Our Programs</a></li>
-                                    <li class="underline"><a href="event.html">Events</a></li>
-                                    <li class="underline"><a href="instructor.html">Instructor</a></li>
-                                    <li class="underline"><a href="instructor-details.html">Instructor Details</a>
+                                    <li class="underline"><a href="{{ route('introduction.home') }}">Giới thiệu</a>
                                     </li>
-                                    <li class="underline"><a href="apply-online.html">Admission</a></li>
+                                    <li class="underline"><a href="{{ route('courses.home') }}">Môn học</a></li>
+                                    <li class="underline"><a href="{{ route('teachers.home') }}">Giảng viên</a></li>
+                                    <li class="underline"><a href="{{ route('feeling.home') }}">Cảm nhận</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="bd-footer-widget footer-1-col-3">
-                            <h6 class="bd-footer-widget-title">Useful Links</h6>
+                            <h6 class="bd-footer-widget-title">Liên kết hữu ích</h6>
                             <div class="bd-footer-widget-links list-none">
                                 <ul>
-                                    <li class="underline"><a href="contact.html">Contact Us</a></li>
-                                    <li class="underline"><a href="blog.html">Latest News</a></li>
-                                    <li class="underline"><a href="faq.html">FAQ’s</a></li>
-                                    <li class="underline"><a href="gallery.html">Gallery</a></li>
-                                    <li class="underline"><a href="mvs.html">Vision &amp; Mission</a></li>
-                                    <li class="underline"><a href="sign-in.html">Sign In</a></li>
+                                    <li class="underline"><a href="{{ route('contact.home') }}">Liên hệ</a></li>
+                                    <li class="underline"><a href="{{ route('news.home') }}">Tin tức</a></li>
+                                    <li class="underline"><a href="{{ route('products.home') }}">Giới thiệu sách</a>
+                                    </li>
+
+                                    <li class="underline"><a href="{{ route('login') }}">Đăng nhập</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-sm-12">
                         <div class="bd-footer-widget footer-1-col-4">
-                            <h6 class="bd-footer-widget-title mb-20">Stay Connected</h6>
+                            <h6 class="bd-footer-widget-title mb-20">Kết nối khác</h6>
                             <div class="bd-footer-from-content mb-20">
                                 <div class="bd-footer-social">
                                     <div class="theme-social social-brand-color">
                                         <ul class="social-icon-list">
-                                            <li><a class="facebook" href="#"><i
-                                                        class="fab fa-facebook"></i></a>
-                                            </li>
-                                            <li><a class="twitter" href="#"><i class="fab fa-github"></i></a>
-                                            </li>
-                                            <li><a class="linkedin" href="#"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li><a class="instagram" href="#"><i
-                                                        class="fab fa-instagram"></i></a>
-                                            </li>
-                                            <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
-                                            </li>
+                                            @if (!empty(get_config()->facebook))
+                                                <li><a class="facebook" href="{{ get_config()->facebook }}"><i class="fab fa-facebook"></i></a></li>
+                                            @endif
+                                            @if (!empty(get_config()->github))
+                                                <li><a class="github" href="{{ get_config()->github }}"><i class="fab fa-github"></i></a></li>
+                                            @endif
+                                            @if (!empty(get_config()->linkedin))
+                                                <li><a class="linkedin" href="{{ get_config()->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+                                            @endif
+                                            @if (!empty(get_config()->instagram))
+                                                <li><a class="instagram" href="{{ get_config()->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                                            @endif
+                                            @if (!empty(get_config()->youtube))
+                                                <li><a class="youtube" href="{{ get_config()->youtube }}"><i class="fab fa-youtube"></i></a></li>
+                                            @endif
+                                            @if (!empty(get_config()->zalo))
+                                                <li><a class="zalo" href="{{ get_config()->zalo }}"><img src="{{ asset('/source/images/zalo-icon.png') }}" alt="Zalo"></a></li>
+                                            @endif
                                         </ul>
+                                        
                                     </div>
                                 </div>
                             </div>

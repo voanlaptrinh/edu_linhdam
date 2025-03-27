@@ -45,21 +45,21 @@
                         <div class="bd-blog-widget widget-latest-posts">
                             <h5 class="bd-widget-title mb-20">Bài viết mới nhất</h5>
                             <div class="bd-widget-posts">
-                                @foreach ($newsLatest as $newsLatest)
+                                @foreach ($newsLatest as $newsLatestew)
                                     <div class="bd-recent-post-item">
                                         <div class="bd-recent-post-thumb">
-                                            <a href="{{ route('news.detail.home', ['alias' => $newsLatest->alias]) }}"><img
-                                                    src="{{ asset($newsLatest->image) }}" alt="image"></a>
+                                            <a href="{{ route('news.detail.home', ['alias' => $newsLatestew->alias]) }}"><img
+                                                    src="{{ asset($newsLatestew->image ?: '/source/images/blog-thumb-20.webp') }}" alt="image"></a>
                                         </div>
                                         <div class="bd-recent-post-content">
                                             <div class="bd-recent-post-meta">
                                                 <span class="icon"><i class="fa-light fa-calendar-days"></i></span>
                                                 <span class="date">
-                                                    {{ \Carbon\Carbon::parse($newsLatest->created_at)->locale('vi')->translatedFormat('d F Y') }}</span>
+                                                    {{ \Carbon\Carbon::parse($newsLatestew->created_at)->locale('vi')->translatedFormat('d F Y') }}</span>
                                             </div>
                                             <h6 class="bd-recent-post-title underline"><a
-                                                    href="{{ route('news.detail.home', ['alias' => $newsLatest->alias]) }}"
-                                                    class="text-dark">{{ $newsLatest->name }}</a>
+                                                    href="{{ route('news.detail.home', ['alias' => $newsLatestew->alias]) }}"
+                                                    class="text-dark">{{ $newsLatestew->name }}</a>
                                             </h6>
                                         </div>
                                     </div>

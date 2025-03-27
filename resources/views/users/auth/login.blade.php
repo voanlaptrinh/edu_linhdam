@@ -9,8 +9,8 @@
                     <div class="bd-authentication-form-logo">
                         <a href="{{route('home')}}"><img src="{{ asset(get_config()->logo) }}" width="120px" height="120px" alt="logo"></a>
                     </div>
-                    <h3 class="title mb-10">Sign In</h3>
-                    <p class="subtitle">Welcome back Wick</p>
+                    <h3 class="title mb-10">Đăng nhập</h3>
+                    <p class="subtitle">Chào mừng đến với {{get_config()->title}}</p>
                     <form class="needs-validation" novalidate="" action="{{ route('login') }}" method="POST">
                         @csrf
                         <div class="form-input-box mb-20">
@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-input-box mb-20">
                             <div class="form-input-title">
-                                <label for="password">Password <span>*</span></label>
+                                <label for="password">Mật khẩu <span>*</span></label>
                             </div>
                             <div class="form-input">
                                 <input name="password" id="password" class="form-control" type="password" placeholder="Your Password">
@@ -37,11 +37,11 @@
                         </div>
                        
                         <div class="bd-sign-btn">
-                            <button class="bd-btn btn-primary w-100" type="submit">Đăng ký</a>
+                            <button class="bd-btn btn-primary w-100" type="submit">Đăng nhập</a>
                         </div>
                     </form>
                     <div class="bd-sign-up-label underline-two text-center pt-3">
-                        Don't have an account?<a href="sign-up.html" class="sign-link"> Sign up</a>
+                        Bạn không có tài khoản?<a href="{{ route('register') }}" class="sign-link"> Đăng ký</a>
                     </div>
                    
                 </div>

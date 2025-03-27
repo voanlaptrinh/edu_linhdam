@@ -201,87 +201,32 @@
                 <div class="swiper mySwiper2 testimonialActiveFour">
                     <div class="swiper-wrapper ">
                         <!-- Slide 1 -->
+                        @foreach ($feelings as $feeling)
+                            
                         <div class="swiper-slide">
                             <div class="bd-testimonial-content">
                                 <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                    @for ($i = 1; $i <= 5; $i++)
+                        <span class="{{ $i <= $feeling->rating ? 'text-warning' : 'text-muted' }}"><i class="fas fa-star"></i></span>
+                    @endfor
                                 </div>
-                                <p class="description">“My time at iStudy University has been
-                                    life-changing. The courses are well-structured, and the resources
-                                    provided are top-notch. I’ve gained both practical knowledge and
-                                    lifelong friendships here.”</p>
+                                <p class="description">“{{ $feeling->content }}”</p>
                                 <div class="bd-testimonial-meta">
                                     <div class="author">
                                         <div class="thumb">
-                                            <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
+                                            <img src="{{ asset($feeling->image ?: '/source/images/instructor-thumb-05.webp') }}"
                                                 alt="student">
                                         </div>
                                         <div class="details">
-                                            <h6 class="name">David Chowdhury</h6>
-                                            <p class="designation">Business Administration Student</p>
+                                            <h6 class="name">{{ $feeling->title }}</h6>
+                                            <p class="designation">{{ \Carbon\Carbon::parse($feeling->created_at)->locale('vi')->translatedFormat('d F Y') }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="bd-testimonial-content">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="description">“My time at iStudy University has been
-                                    life-changing. The courses are well-structured, and the resources
-                                    provided are top-notch. I’ve gained both practical knowledge and
-                                    lifelong friendships here.”</p>
-                                <div class="bd-testimonial-meta">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
-                                                alt="student">
-                                        </div>
-                                        <div class="details">
-                                            <h6 class="name">David Chowdhury</h6>
-                                            <p class="designation">Business Administration Student</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bd-testimonial-content">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="description">“My time at iStudy University has been
-                                    life-changing. The courses are well-structured, and the resources
-                                    provided are top-notch. I’ve gained both practical knowledge and
-                                    lifelong friendships here.”</p>
-                                <div class="bd-testimonial-meta">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <img src="https://html.topylo.com/istudy-prv/assets/images/avatar/avatar2.webp"
-                                                alt="student">
-                                        </div>
-                                        <div class="details">
-                                            <h6 class="name">David Chowdhury</h6>
-                                            <p class="designation">Business Administration Student</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                    
 
 
                     </div>

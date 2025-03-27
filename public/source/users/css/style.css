@@ -1383,6 +1383,9 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .theme-social.social-brand-color ul li .youtube {
     background-color: #FF0000;
 }
+.theme-social.social-brand-color ul li .zalo {
+    background-color: #4583f5;
+}
 
 #header-sticky {
     position: sticky;
@@ -2057,9 +2060,6 @@ only screen and (min-width: 576px) and (max-width: 767px),
     }
 }
 
-#toast-container {
-    box-shadow: 3px 5px 4px 1px black;
-}
 
 .bd-course-wrapper.style-four {
     background: white;
@@ -2368,4 +2368,62 @@ only screen and (min-width: 576px) and (max-width: 767px),
     position: absolute;
     right: 0;
     top: 0;
+}
+.bd-postbox-comment ul li {
+    margin-bottom: 30px;
+    list-style: none;
+}
+.bd-blog-postbox-comment .bd-postbox-comment-box {
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.bd-postbox-comment-box {
+    display: flex
+;
+    align-items: start;
+    padding: 30px 30px;
+    border-radius: 8px;
+    background-color: white;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-postbox-comment-box {
+        flex-direction: column;
+        gap: 15px 0;
+    }
+}
+.bd-postbox-comment-info {
+    flex: 0 0 auto;
+}
+.bd-postbox-comment-avatar img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+.bd-postbox-comment-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+.bd-postbox-comment-name {
+    margin-bottom: 5px;
+}
+.bd-postbox-comment-name .title {
+    font-size: 20px;
+    line-height: 1;
+    color: black;
+}
+a, button {
+    color: inherit;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.bd-postbox-comment-name .post-meta {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #808080;
+    display: inline-block;
 }
