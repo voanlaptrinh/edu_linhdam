@@ -26,8 +26,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/profile', [HomeController::class, 'profile'])->name('home.profile');
-Route::post('/profile', [HomeController::class, 'update'])->name('home.profile.update');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [HomeController::class, 'profile'])->name('home.profile');
+    Route::post('/profile', [HomeController::class, 'update'])->name('home.profile.update');
+});
+
+
+
+
 Route::get('/introduction', [IntroductionController::class, 'index'])->name('introduction.home');
 Route::post('/storeEmail', [HomeController::class, 'store'])->name('store.email.home');
 Route::prefix('/teachers')->group(function () {

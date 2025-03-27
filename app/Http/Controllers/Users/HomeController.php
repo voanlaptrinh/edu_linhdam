@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public function __construct()
+{
+    $this->middleware('auth');
+}
+
     public function index(Request $request)
     {
         $news = News::orderBy('created_at', 'desc')->take(4)->get();
@@ -49,6 +54,9 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Gửi liên hệ thành công!');
     }
     public function profile(){
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem trang này.');
+        }
         return view('users.auth.profile');
     }
     public function update(Request $request)
